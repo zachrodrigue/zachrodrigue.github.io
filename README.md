@@ -31,6 +31,11 @@ Welcome to my data analysis portfolio! This repository showcases my skills in da
    - **Read Project Report**: [Read Project Report](./assets/documents/cyclistic_report.pdf)
    - **View Project Dashboard**: [View Project Dashboard](https://public.tableau.com/app/profile/rodrigue.deguenon/viz/CyclisticBikeShareAnalysis_17374684424790/Dashboard1)
 
+### 3. **Mint Classics Inventory Optimization**
+   - **Description**: Conducted exploratory data analysis (EDA) on mint classics' inventory and warehouse data using SQL and MySQL workbench to identify patterns for inventory reduction and reorganization. 
+   - **Tools Used**: SQL, MySQL
+   - **Read Project Report**: [Read Project Report](./assets/documents/mint_classics_eda_report.pdf)
+
 *More projects coming soon! Stay tuned for exciting data analysis projects.*
 
 ## 👨‍💻 About Me
