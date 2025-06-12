@@ -19,8 +19,8 @@ Welcome! This portfolio highlights my expertise in data cleaning, exploration, v
 
 - **Goal:** Uncover sales trends and growth opportunities for a furniture retailer.
 - **Approach:** Cleaned and analyzed sales data, identified top products, customer segments, and seasonal patterns. Delivered actionable insights and visualizations.
-- **Tech:** Excel, Power Query, Pivot Tables
-  [Dashboard](https://1drv.ms/x/c/67671d55fee3b341/ERE_h7DobQdOuV233ME37EYB1QpP0gYoMQqjqmyLswiblw) | [Report PDF](./documents/reports/furniture_sales_report.pdf)
+- **Tech:** Excel, Power Query, Pivot Tables  
+  [Dashboard](https://1drv.ms/x/c/67671d55fee3b341/ERE_h7DobQdOuV233ME37EYB1QpP0gYoMQqjqmyLswiblw) | [Report PDF](https://github.com/zachrodrigue/zachrodrigue.github.io/blob/main/documents/reports/Furniture%20Sales%20Analysis%20Report.pdf)
 
 ---
 
@@ -47,7 +47,7 @@ Welcome! This portfolio highlights my expertise in data cleaning, exploration, v
 - **Goal:** Streamline warehouse operations.
 - **Approach:** Analyzed multi-warehouse inventory, SQL optimization, redistribution plan.
 - **Tech:** SQL, MySQL  
-  [Report](./documents/reports/mint_classics_eda_report.pdf)
+  [SQL Scripts](./documents/scripts/mint-classics/eda_script.sql) | [Report](./documents/reports/mint_classics_eda_report.pdf)
 
 ---
 
