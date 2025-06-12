@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Projects | Rodrigue Deguenon</title>
+    <meta name="description" content="Detailed case studies of my data analysis projects showcasing my skills and approach.">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.kaggle.com">
+    <link rel="preconnect" href="https://public.tableau.com">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap&font-display=swap" rel="stylesheet">
+    
+    <!-- Lightbox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "Bellabeat Data Analysis",
+            "description": "Leveraging fitness data to drive product innovation",
+            "dateCreated": "2025-01-01",
+            "keywords": "data analysis, visualization, R programming"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "Cyclistic Bike Share Analysis",
+            "description": "Data-driven strategies to convert casual riders to members",
+            "dateCreated": "2025-01-01",
+            "keywords": "data analysis, business strategy, Tableau"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "Mint Classics Inventory Optimization",
+            "description": "SQL analysis to optimize warehouse operations",
+            "dateCreated": "2025-01-01",
+            "keywords": "database analysis, SQL, MySQL"
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-icon">R</span>
+                <span class="brand-text">Rodrigue</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                    <li class="nav-item ms-2">
+                        <button class="btn btn-sm theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1>Project Portfolio</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Projects</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Filter -->
+    <section class="section-py bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="project-filters mb-4">
+                        <button class="btn btn-outline-primary active" data-filter="all">All Projects</button>
+                        <button class="btn btn-outline-primary" data-filter="Excel">Excel</button>
+                        <button class="btn btn-outline-primary" data-filter="visualization">Visualization</button>
+                        <button class="btn btn-outline-primary" data-filter="sql">SQL</button>
+                        <button class="btn btn-outline-primary" data-filter="business">Business Strategy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Animated Scroll Down Icon -->
+        <div class="text-center mt-2">
+            <span class="scroll-down-icon" id="scrollDownIcon" style="
+                display: inline-block;
+                animation: bounce 1.5s infinite;
+                font-size: 2rem;
+                color: #0d6efd;
+                cursor: pointer;
+            ">
+                <i class="fas fa-angle-down"></i>
+            </span>
+        </div>
+        <style>
+            @keyframes bounce {
+                0%, 100% { transform: translateY(0);}
+                50% { transform: translateY(12px);}
+            }
+        </style>
+    </section>
+    
+    <!-- Projects Section -->
+    <section class="section-py">
+        <div class="container">
+            <!-- Furniture Sales Project-->
+            <div class="project-detail mb-5" id="furniture-sales-project" data-categories="Excel visualization">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="project-images">
+                            <div class="main-image mb-3">
+                                <a href="img/projects/furniture_sales/dashboard.png" data-fslightbox="furniture-sales-gallery" data-alt="Furniture Sales Analysis Dashboard">
+                                    <img src="img/projects/furniture_sales/dashboard.png" alt="Furniture Sales Analysis Dashboard" class="img-fluid rounded" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="thumbnail-images">
+                                <a href="img/projects/furniture_sales/monthly_sales_trend1.png" data-fslightbox="furniture-sales-gallery" data-alt="Furniture Sales Analysis 1">
+                                    <img src="img/projects/furniture_sales/monthly_sales_trend1.png" alt="Furniture Sales Analysis 1" class="img-fluid rounded" loading="lazy">
+                                </a>
+                                <a href="img/projects/furniture_sales/shipping_mode_pie_chart1.png" data-fslightbox="furniture-sales-gallery" data-alt="Furniture Sales Analysis 2">
+                                    <img src="img/projects/furniture_sales/shipping_mode_pie_chart1.png" alt="Furniture Sales Analysis 2" class="img-fluid rounded" loading="lazy">
+                                </a>
+                                <a href="img/projects/furniture_sales/yoy_percent_change1.png" data-fslightbox="furniture-sales-gallery" data-alt="Furniture Sales Analysis 3">
+                                    <img src="img/projects/furniture_sales/yoy_percent_change1.png" alt="Furniture Sales Analysis 3" class="img-fluid rounded" loading="lazy">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="project-content">
+                            <h2 class="project-title">Furniture Sales Analysis</h2>
+                            <p class="project-subtitle">Optimizing sales strategies through data insights</p>
+                            
+                            <div class="project-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">Client:</span>
+                                    <span class="meta-value">Furniture Sales (Case Study)</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Date:</span>
+                                    <span class="meta-value">June 2025</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Category:</span>
+                                    <span class="meta-value">Data Analysis, Visualization, Excel</span>
+                                </div>
+                            </div>
+
+                            <div class="project-description">
+                                <h5>Project Overview</h5>
+                                <p>Analyzed sales data to identify trends and provide actionable insights for the furniture store.</p>
+
+                                <h5 class="mt-4">Key Achievements</h5>
+                                <ul>
+                                    <li>Developed interactive dashboard to visualize sales performance.</li>
+                                    <li>Identified key performance factors driving sales and customer engagement.</li>
+                                    <li>Provided actionable recommendations to optimize sales, profit and operations.</li>
+
+                                </ul>
+                                <h5 class="mt-4">Technologies Used</h5>
+                                <div class="tech-tags">
+                                    <span class="badge bg-primary-light text-primary">Excel</span>
+                                    <span class="badge bg-primary-light text-primary">Power Query</span>
+                                    <span class="badge bg-primary-light text-primary">Pivot Tables</span>
+                                    <span class="badge bg-primary-light text-primary">Pivot Charts</span>
+                                </div>
+                            </div>
+                            <div class="project-actions mt-4">
+                                <a href="https://1drv.ms/x/c/67671d55fee3b341/ERE_h7DobQdOuV233ME37EYB1QpP0gYoMQqjqmyLswiblw" class="btn btn-primary me-2" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-chart-bar me-1"></i> View Dashboard
+                                </a>
+                                <a href="/documents/reports/Furniture Sales Analysis Report.pdf" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf me-1"></i> Read Report
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bellabeat Project -->
+            <div class="project-detail mb-5" id="bellabeat-project" data-categories="data-analysis visualization">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="project-images">
+                            <div class="main-image mb-3">
+                                <a href="img/projects/bellabeat/bellabeat-detail.png" data-fslightbox="bellabeat-gallery" data-alt="Bellabeat Analysis Dashboard">
+                                    <img src="img/projects/bellabeat/bellabeat-detail.png" alt="Bellabeat Analysis Dashboard" class="img-fluid rounded" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="thumbnail-images">
+                                <a href="img/projects/bellabeat/bellabeat-1.png" data-fslightbox="bellabeat-gallery" data-alt="Bellabeat Analysis 1">
+                                    <img src="img/projects/bellabeat/bellabeat-1.png" alt="Bellabeat Analysis 1" class="img-fluid rounded" loading="lazy">
+                                </a>
+                                <a href="img/projects/bellabeat/bellabeat-2.png" data-fslightbox="bellabeat-gallery" data-alt="Bellabeat Analysis 2">
+                                    <img src="img/projects/bellabeat/bellabeat-2.png" alt="Bellabeat Analysis 2" class="img-fluid rounded" loading="lazy">
+                                </a>
+                                <a href="img/projects/bellabeat/bellabeat-3.png" data-fslightbox="bellabeat-gallery" data-alt="Bellabeat Analysis 3">
+                                    <img src="img/projects/bellabeat/bellabeat-3.png" alt="Bellabeat Analysis 3" class="img-fluid rounded" loading="lazy">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="project-content">
+                            <h2 class="project-title">Bellabeat Data Analysis</h2>
+                            <p class="project-subtitle">Leveraging fitness data to drive product innovation</p>
+                            
+                            <div class="project-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">Client:</span>
+                                    <span class="meta-value">Bellabeat (Case Study)</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Date:</span>
+                                    <span class="meta-value">January 2025</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Category:</span>
+                                    <span class="meta-value">Data Analysis, Visualization</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-description">
+                                <h5>Project Overview</h5>
+                                <p>Conducted an exploratory data analysis (EDA) on fitness data from non-Bellabeat devices to identify user trends, informing Bellabeat's product development and marketing strategies to enhance customer engagement.</p>
+                                
+                                <h5 class="mt-4">Key Achievements</h5>
+                                <ul>
+                                    <li>Analyzed daily activity, sleep, and intensity data to uncover key user behaviors</li>
+                                    <li>Identified peak usage times and recommended personalized marketing campaigns</li>
+                                    <li>Proposed new features for Bellabeat's app to improve user retention and satisfaction</li>
+                                </ul>
+                                
+                                <h5 class="mt-4">Technologies Used</h5>
+                                <div class="tech-tags">
+                                    <span class="badge bg-primary-light text-primary">R Programming</span>
+                                    <span class="badge bg-primary-light text-primary">ggplot2</span>
+                                    <span class="badge bg-primary-light text-primary">tidyverse</span>
+                                    <span class="badge bg-primary-light text-primary">R Markdown</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-actions mt-4">
+                                <a href="https://www.kaggle.com/code/rodriguedeguenon/capstone-project-bellabeat" class="btn btn-primary me-2" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-kaggle me-1"></i> View on Kaggle
+                                </a>
+                                <a href="/documents/reports/bellabeat-report.pdf" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf me-1"></i> Read Report
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cyclistic Project -->
+            <div class="project-detail mb-5" id="cyclistic-project" data-categories="data-analysis business visualization">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="project-images">
+                            <div class="main-image mb-3">
+                                <a href="img/projects/cyclistic/cyclistic-detail.png" data-fslightbox="cyclistic-gallery" data-alt="Cyclistic Analysis Dashboard">
+                                    <img src="img/projects/cyclistic/cyclistic-detail.png" alt="Cyclistic Analysis Dashboard" class="img-fluid rounded" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="thumbnail-images">
+                                <a href="img/projects/cyclistic/cyclistic-1.png" data-fslightbox="cyclistic-gallery" data-alt="Cyclistic Analysis 1">
+                                    <img src="img/projects/cyclistic/cyclistic-1.png" alt="Cyclistic Analysis 1" class="img-fluid rounded" loading="lazy">
+                                </a>
+                                <a href="img/projects/cyclistic/cyclistic-2.png" data-fslightbox="cyclistic-gallery" data-alt="Cyclistic Analysis 2">
+                                    <img src="img/projects/cyclistic/cyclistic-2.png" alt="Cyclistic Analysis 2" class="img-fluid rounded" loading="lazy">
+                                </a>
+                                <a href="img/projects/cyclistic/cyclistic-3.png" data-fslightbox="cyclistic-gallery" data-alt="Cyclistic Analysis 3">
+                                    <img src="img/projects/cyclistic/cyclistic-3.png" alt="Cyclistic Analysis 3" class="img-fluid rounded" loading="lazy">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="project-content">
+                            <h2 class="project-title">Cyclistic Bike Share Analysis</h2>
+                            <p class="project-subtitle">Data-driven strategies to convert casual riders to members</p>
+                            
+                            <div class="project-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">Client:</span>
+                                    <span class="meta-value">Cyclistic (Case Study)</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Date:</span>
+                                    <span class="meta-value">January 2025</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Category:</span>
+                                    <span class="meta-value">Data Analysis, Business Strategy</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-description">
+                                <h5>Project Overview</h5>
+                                <p>Conducted a comprehensive analysis of Cyclistic's bike-sharing data to identify differences in usage patterns between casual and annual members. The insights informed marketing strategies to convert casual riders to annual members.</p>
+                                
+                                <h5 class="mt-4">Key Achievements</h5>
+                                <ul>
+                                    <li>Analyzed 12 months of bike-sharing data to identify key differences between user types</li>
+                                    <li>Identified peak usage times and recommended targeted marketing campaigns</li>
+                                    <li>Proposed incentives to encourage casual riders to become annual members</li>
+                                </ul>
+                                
+                                <h5 class="mt-4">Technologies Used</h5>
+                                <div class="tech-tags">
+                                    <span class="badge bg-primary-light text-primary">R Programming</span>
+                                    <span class="badge bg-primary-light text-primary">Tableau</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-actions mt-4">
+                                <a href="https://public.tableau.com/app/profile/rodrigue.deguenon/viz/CyclisticBikeShareAnalysis_17374684424790/Dashboard1" class="btn btn-primary me-2" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-chart-bar me-1"></i> View Dashboard
+                                </a>
+                                <a href="/documents/reports/cyclistic_report.pdf" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf me-1"></i> Read Report
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mint Classics Project -->
+            <div class="project-detail" id="mintclassics-project" data-categories="sql data-analysis">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="project-images">
+                            <div class="main-image mb-3">
+                                <a href="img/projects/mint_classics/mint-classics-detail.png" data-fslightbox="mintclassics-gallery" data-alt="Mint Classics ERD">
+                                    <img src="img/projects/mint_classics/mint-classics-detail.png" alt="Mint Classics ERD" class="img-fluid rounded" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="thumbnail-images">
+                                <a href="img/projects/mint_classics/mint1.png" data-fslightbox="mintclassics-gallery" data-alt="Mint Classics Query 1">
+                                    <img src="img/projects/mint_classics/mint1.png" alt="Mint Classics Query 1" class="img-fluid rounded" loading="lazy">
+                                </a>
+                                <a href="img/projects/mint_classics/mint2.png" data-fslightbox="mintclassics-gallery" data-alt="Mint Classics Query 2">
+                                    <img src="img/projects/mint_classics/mint2.png" alt="Mint Classics Query 2" class="img-fluid rounded" loading="lazy">
+                                </a>
+                                <a href="img/projects/mint_classics/mint3.png" data-fslightbox="mintclassics-gallery" data-alt="Mint Classics Query 3">
+                                    <img src="img/projects/mint_classics/mint3.png" alt="Mint Classics Query 3" class="img-fluid rounded" loading="lazy">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="project-content">
+                            <h2 class="project-title">Mint Classics Inventory Optimization</h2>
+                            <p class="project-subtitle">SQL analysis to optimize warehouse operations</p>
+                            
+                            <div class="project-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">Client:</span>
+                                    <span class="meta-value">Mint Classics (Case Study)</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Date:</span>
+                                    <span class="meta-value">January 2025</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Category:</span>
+                                    <span class="meta-value">Database Analysis, SQL</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-description">
+                                <h5>Project Overview</h5>
+                                <p>Conducted an exploratory data analysis on Mint Classics' inventory and warehouse data in a relational database to identify patterns that may influence inventory reduction or reorganization, supporting the closure of a storage facility.</p>
+                                
+                                <h5 class="mt-4">Key Achievements</h5>
+                                <ul>
+                                    <li>Identified Warehouse South as a candidate for closure, supporting inventory-related business decision</li>
+                                    <li>Planned redistribution of 79,380 units of inventory to other warehouses without overburdening them</li>
+                                    <li>Identified slow-moving products and low inventory turnover ratio to reduce excess inventory</li>
+                                </ul>
+                                
+                                <h5 class="mt-4">Technologies Used</h5>
+                                <div class="tech-tags">
+                                    <span class="badge bg-primary-light text-primary">SQL</span>
+                                    <span class="badge bg-primary-light text-primary">MySQL</span>
+                                    <span class="badge bg-primary-light text-primary">Database Design</span>
+                                    <span class="badge bg-primary-light text-primary">ERD</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-actions mt-4">
+                                <a href="/documents/scripts/mint-classics/eda_script.sql" class="btn btn-primary me-2" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github me-1"></i> View SQL Scripts
+                                </a>
+                                <a href="/documents/reports/mint_classics_eda_report.pdf" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf me-1"></i> Read Report
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pagination Bar -->
+        <nav aria-label="Projects pagination" class="mt-4">
+            <ul class="pagination justify-content-center" id="projectsPagination">
+                <!-- Pagination items will be injected by JS -->
+            </ul>
+        </nav>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-primary back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; <script>document.write(new Date().getFullYear())</script> Rodrigue Deguenon. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms</a>
+                        <a href="#top" class="back-to-top">
+                            <i class="fas fa-arrow-up"></i> Back to Top
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Lightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js" defer></script>
+    
+    <!-- Projects Filter JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Filter projects
+            const filterButtons = document.querySelectorAll('.project-filters button');
+            const projects = document.querySelectorAll('.project-detail');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const filter = button.dataset.filter;
+                    
+                    // Filter projects
+                    projects.forEach(project => {
+                        if (filter === 'all' || project.dataset.categories.includes(filter)) {
+                            project.style.display = 'block';
+                        } else {
+                            project.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Tech tag filtering
+            const techTags = document.querySelectorAll('.clickable-tech-tag');
+            techTags.forEach(tag => {
+                tag.addEventListener('click', () => {
+                    const tech = tag.dataset.tech;
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    document.querySelector(`.project-filters button[data-filter="${tech}"]`).classList.add('active');
+                    
+                    projects.forEach(project => {
+                        if (project.dataset.categories.includes(tech)) {
+                            project.style.display = 'block';
+                        } else {
+                            project.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Back to top button
+            const backToTopButton = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+            
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // PAGINATION LOGIC
+            const projectsPerPage = 2;
+            let currentPage = 1;
+            let filteredProjects = Array.from(document.querySelectorAll('.project-detail'));
+            const paginationContainer = document.getElementById('projectsPagination');
+
+            function showProjectsPage(page) {
+                const start = (page - 1) * projectsPerPage;
+                const end = start + projectsPerPage;
+                filteredProjects.forEach((proj, idx) => {
+                    proj.style.display = (idx >= start && idx < end) ? 'block' : 'none';
+                });
+                renderPagination(page, Math.ceil(filteredProjects.length / projectsPerPage));
+            }
+
+            function renderPagination(page, totalPages) {
+                paginationContainer.innerHTML = '';
+                if (totalPages <= 1) return;
+                // Prev button
+                const prev = document.createElement('li');
+                prev.className = 'page-item' + (page === 1 ? ' disabled' : '');
+                prev.innerHTML = `<a class="page-link" href="#" tabindex="-1">&laquo;</a>`;
+                prev.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (page > 1) {
+                        currentPage = page - 1;
+                        showProjectsPage(currentPage);
+                        window.scrollTo({ top: document.querySelector('.section-py').offsetTop - 100, behavior: 'smooth' });
+                    }
+                });
+                paginationContainer.appendChild(prev);
+
+                // Page numbers
+                for (let i = 1; i <= totalPages; i++) {
+                    const li = document.createElement('li');
+                    li.className = 'page-item' + (i === page ? ' active' : '');
+                    li.innerHTML = `<a class="page-link" href="#">${i}</a>`;
+                    li.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        currentPage = i;
+                        showProjectsPage(currentPage);
+                        window.scrollTo({ top: document.querySelector('.section-py').offsetTop - 100, behavior: 'smooth' });
+                    });
+                    paginationContainer.appendChild(li);
+                }
+
+                // Next button
+                const next = document.createElement('li');
+                next.className = 'page-item' + (page === totalPages ? ' disabled' : '');
+                next.innerHTML = `<a class="page-link" href="#">&raquo;</a>`;
+                next.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (page < totalPages) {
+                        currentPage = page + 1;
+                        showProjectsPage(currentPage);
+                        window.scrollTo({ top: document.querySelector('.section-py').offsetTop - 100, behavior: 'smooth' });
+                    }
+                });
+                paginationContainer.appendChild(next);
+            }
+
+            function updateFilteredProjects() {
+                filteredProjects = Array.from(document.querySelectorAll('.project-detail')).filter(
+                    proj => proj.style.display !== 'none'
+                );
+            }
+
+            // Initial pagination
+            updateFilteredProjects();
+            showProjectsPage(currentPage);
+
+            // Hook into filter buttons to reset pagination
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // After filter, update filteredProjects and reset to page 1
+                    setTimeout(() => {
+                        // Only visible projects
+                        filteredProjects = Array.from(document.querySelectorAll('.project-detail')).filter(
+                            proj => proj.style.display !== 'none'
+                        );
+                        currentPage = 1;
+                        showProjectsPage(currentPage);
+                    }, 250);
+                });
+            });
+
+            // Hook into tech tag filtering to reset pagination
+            techTags.forEach(tag => {
+                tag.addEventListener('click', () => {
+                    setTimeout(() => {
+                        filteredProjects = Array.from(document.querySelectorAll('.project-detail')).filter(
+                            proj => proj.style.display !== 'none'
+                        );
+                        currentPage = 1;
+                        showProjectsPage(currentPage);
+                    }, 250);
+                });
+            });
+            
+            // Scroll down icon click: scroll to first visible project
+            document.getElementById('scrollDownIcon').addEventListener('click', function() {
+                const firstVisible = Array.from(document.querySelectorAll('.project-detail'))
+                    .find(el => el.style.display !== 'none');
+                if (firstVisible) {
+                    firstVisible.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
