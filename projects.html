@@ -128,9 +128,10 @@
                     <div class="project-filters mb-4">
                         <button class="btn btn-outline-primary active" data-filter="all">All Projects</button>
                         <button class="btn btn-outline-primary" data-filter="Excel">Excel</button>
-                        <button class="btn btn-outline-primary" data-filter="visualization">Visualization</button>
-                        <button class="btn btn-outline-primary" data-filter="sql">SQL</button>
-                        <button class="btn btn-outline-primary" data-filter="business">Business Strategy</button>
+                        <button class="btn btn-outline-primary" data-filter="SQL">SQL</button>
+                        <button class="btn btn-outline-primary" data-filter="R">R</button>
+                        <button class="btn btn-outline-primary" data-filter="Power BI">Power BI</button>
+                        <button class="btn btn-outline-primary" data-filter="Tableau">Tableau</button>
                     </div>
                 </div>
             </div>
@@ -153,7 +154,7 @@
     <section class="section-py">
         <div class="container">
             <!-- Furniture Sales Project-->
-            <div class="project-detail mb-5" id="furniture-sales-project" data-categories="Excel visualization">
+            <div class="project-detail mb-5" id="furniture-sales-project" data-categories="Excel">
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-6">
                         <div class="project-images">
@@ -176,7 +177,7 @@
                                 </div>
                                 <div class="meta-item">
                                     <span class="meta-label">Category:</span>
-                                    <span class="meta-value">Data Analysis, Visualization, Excel</span>
+                                    <span class="meta-value">Excel</span>
                                 </div>
                             </div>
 
@@ -213,7 +214,7 @@
             </div>
 
             <!-- Bellabeat Project -->
-            <div class="project-detail mb-5" id="bellabeat-project" data-categories="data-analysis visualization">
+            <div class="project-detail mb-5" id="bellabeat-project" data-categories="R">
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-6">
                         <div class="project-images">
@@ -236,7 +237,7 @@
                                 </div>
                                 <div class="meta-item">
                                     <span class="meta-label">Category:</span>
-                                    <span class="meta-value">Data Analysis, Visualization</span>
+                                    <span class="meta-value">R</span>
                                 </div>
                             </div>
                             
@@ -253,7 +254,7 @@
                                 
                                 <h5 class="mt-4">Technologies Used</h5>
                                 <div class="tech-tags">
-                                    <span class="badge bg-primary-light text-primary">R Programming</span>
+                                    <span class="badge bg-primary-light text-primary">R</span>
                                     <span class="badge bg-primary-light text-primary">ggplot2</span>
                                     <span class="badge bg-primary-light text-primary">tidyverse</span>
                                     <span class="badge bg-primary-light text-primary">R Markdown</span>
@@ -274,7 +275,7 @@
             </div>
             
             <!-- Cyclistic Project -->
-            <div class="project-detail mb-5" id="cyclistic-project" data-categories="data-analysis business visualization">
+            <div class="project-detail mb-5" id="cyclistic-project" data-categories="R Tableau">
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-6 order-lg-2">
                         <div class="project-images">
@@ -297,7 +298,7 @@
                                 </div>
                                 <div class="meta-item">
                                     <span class="meta-label">Category:</span>
-                                    <span class="meta-value">Data Analysis, Business Strategy</span>
+                                    <span class="meta-value">R, Tableau</span>
                                 </div>
                             </div>
                             
@@ -314,7 +315,7 @@
                                 
                                 <h5 class="mt-4">Technologies Used</h5>
                                 <div class="tech-tags">
-                                    <span class="badge bg-primary-light text-primary">R Programming</span>
+                                    <span class="badge bg-primary-light text-primary">R</span>
                                     <span class="badge bg-primary-light text-primary">Tableau</span>
                                 </div>
                             </div>
@@ -333,7 +334,7 @@
             </div>
             
             <!-- Mint Classics Project -->
-            <div class="project-detail" id="mintclassics-project" data-categories="sql data-analysis">
+            <div class="project-detail" id="mintclassics-project" data-categories="SQL">
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-6">
                         <div class="project-images">
@@ -356,7 +357,7 @@
                                 </div>
                                 <div class="meta-item">
                                     <span class="meta-label">Category:</span>
-                                    <span class="meta-value">Database Analysis, SQL</span>
+                                    <span class="meta-value">SQL</span>
                                 </div>
                             </div>
                             
@@ -449,7 +450,7 @@
                     
                     // Filter projects
                     projects.forEach(project => {
-                        if (filter === 'all' || project.dataset.categories.includes(filter)) {
+                        if (filter === 'all' || project.dataset.categories.split(' ').includes(filter)) {
                             project.style.display = 'block';
                         } else {
                             project.style.display = 'none';
@@ -465,9 +466,8 @@
                     const tech = tag.dataset.tech;
                     filterButtons.forEach(btn => btn.classList.remove('active'));
                     document.querySelector(`.project-filters button[data-filter="${tech}"]`).classList.add('active');
-                    
                     projects.forEach(project => {
-                        if (project.dataset.categories.includes(tech)) {
+                        if (project.dataset.categories.split(' ').includes(tech)) {
                             project.style.display = 'block';
                         } else {
                             project.style.display = 'none';
