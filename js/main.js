@@ -231,6 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //     });
     // });
 });
+
 // Add event listener for window resize to handle responsive adjustments
 window.addEventListener('resize', function() {
     document.querySelectorAll('.project-images').forEach(container => {
