@@ -20,7 +20,7 @@ Welcome! This portfolio highlights my expertise in data cleaning, exploration, v
 - **Goal:** Uncover sales trends and growth opportunities for a furniture retailer.
 - **Approach:** Cleaned and analyzed sales data, identified top products, customer segments, and seasonal patterns. Delivered actionable insights and visualizations.
 - **Tech:** Excel, Power Query, Pivot Tables
-  [Dashboard](https://1drv.ms/x/c/67671d55fee3b341/ERE_h7DobQdOuV233ME37EYB1QpP0gYoMQqjqmyLswiblw) | [Report PDF](./assets/documents/reports/furniture_sales_report.pdf)
+  [Dashboard](https://1drv.ms/x/c/67671d55fee3b341/ERE_h7DobQdOuV233ME37EYB1QpP0gYoMQqjqmyLswiblw) | [Report PDF](./documents/reports/furniture_sales_report.pdf)
 
 ---
 
@@ -29,7 +29,7 @@ Welcome! This portfolio highlights my expertise in data cleaning, exploration, v
 - **Goal:** Inform product strategy by analyzing non-Bellabeat device usage.
 - **Approach:** EDA on user activity, actionable recommendations, R Markdown report.
 - **Tech:** R, ggplot2, tidyverse  
-  [View on Kaggle](https://www.kaggle.com/code/rodriguedeguenon/capstone-project-bellabeat) | [Report PDF](./assets/documents/reports/bellabeat-report.pdf)
+  [View on Kaggle](https://www.kaggle.com/code/rodriguedeguenon/capstone-project-bellabeat) | [Report PDF](./documents/reports/bellabeat-report.pdf)
 
 ---
 
@@ -38,7 +38,7 @@ Welcome! This portfolio highlights my expertise in data cleaning, exploration, v
 - **Goal:** Convert casual riders to annual members.
 - **Approach:** Processed 3M+ records, identified user behavior, built Tableau dashboard.
 - **Tech:** R, Tableau  
-  [Dashboard](https://public.tableau.com/app/profile/rodrigue.deguenon/viz/CyclisticBikeShareAnalysis_17374684424790/Dashboard1) | [Report PDF](./assets/documents/reports/cyclistic_report.pdf)
+  [Dashboard](https://public.tableau.com/app/profile/rodrigue.deguenon/viz/CyclisticBikeShareAnalysis_17374684424790/Dashboard1) | [Report PDF](./documents/reports/cyclistic_report.pdf)
 
 ---
 
@@ -47,7 +47,7 @@ Welcome! This portfolio highlights my expertise in data cleaning, exploration, v
 - **Goal:** Streamline warehouse operations.
 - **Approach:** Analyzed multi-warehouse inventory, SQL optimization, redistribution plan.
 - **Tech:** SQL, MySQL  
-  [Report](./assets/documents/reports/mint_classics_eda_report.pdf)
+  [Report](./documents/reports/mint_classics_eda_report.pdf)
 
 ---
 
