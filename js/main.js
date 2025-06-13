@@ -230,6 +230,8 @@ document.addEventListener('DOMContentLoaded', function() {
     //         }
     //     });
     // });
+
+    // REMOVE all code related to image modal and .clickable-project-image
 });
 
 // Add event listener for window resize to handle responsive adjustments
