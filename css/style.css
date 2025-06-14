@@ -1149,15 +1149,51 @@ textarea.form-control {
 }
 
 /* Responsive styles */
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
     .hero-content h1 {
-        font-size: 2.2rem;
+        font-size: 2.8rem;
+    }
+    .section-title {
+        font-size: 2.1rem;
+    }
+    .main-image img,
+    .main-gallery-image {
+        max-height: 280px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .hero-section {
+        padding: 5rem 0 2rem;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .section-title {
+        font-size: 1.7rem;
     }
     .section-py {
-        padding: 3rem 0;
+        padding: 2rem 0;
     }
-    .hero-section {
-        padding: 6rem 0 3rem;
+    .about-image,
+    .about-content {
+        text-align: center;
+    }
+    .stats-section {
+        margin-top: 0;
+    }
+    .stat-card {
+        margin-bottom: 1rem;
+    }
+    .project-content {
+        padding: 1rem;
+    }
+    .project-image img {
+        height: 150px;
+    }
+    .main-image img,
+    .main-gallery-image {
+        max-height: 200px;
     }
 }
 
@@ -1169,70 +1205,88 @@ textarea.form-control {
     .hero-badge {
         right: 50%;
         transform: translateX(50%);
+        left: unset;
     }
-    .stats-section {
-        margin-top: 0;
-    }
-    .stat-card {
-        margin-bottom: 1rem;
-    }
-    .about-content {
-        text-align: center;
-    }
-    .feature-item {
-        justify-content: center;
+    .about-image {
+        margin-bottom: 2rem;
     }
     .experience-badge {
         right: 50%;
         transform: translateX(50%);
+        left: unset;
+    }
+    .feature-item {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .project-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .project-actions .btn {
+        width: 100%;
+    }
+    .project-card,
+    .skill-card,
+    .stat-card,
+    .contact-info,
+    .contact-form {
+        padding: 1rem;
+    }
+    .main-image img,
+    .main-gallery-image {
+        max-height: 140px;
+    }
+    .thumbnail-images img {
+        width: 50px;
+        height: 50px;
+    }
+    .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
 
 @media (max-width: 575.98px) {
     .hero-content h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     .section-title {
-        font-size: 1.3rem;
-    .project-actions {
-        flex-direction: column;
+        font-size: 1.1rem;
     }
-    .project-actions .btn {
-        width: 100%;
+    .section-py {
+        padding: 1.2rem 0;
     }
-    .project-card,
-    .skill-card,
-    .stat-card {
-        padding: 1rem;
+    .project-content {
+        padding: 0.5rem;
+    }
+    .main-image img,
+    .main-gallery-image {
+        max-height: 90px;
+    }
+    .thumbnail-images img {
+        width: 36px;
+        height: 36px;
+    }
+    .footer {
+        padding: 1.5rem 0;
+        font-size: 0.95rem;
+    }
+    .back-to-top {
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+        bottom: 15px;
+        right: 15px;
     }
 }
 
-/* Main image sizing */
-.main-gallery-image {
-    width: 100%;
-    max-height: 350px;
-    object-fit: contain;
-    margin-bottom: 0.5rem;
-}
-
-/* Prevent unwanted gestures on gallery images */
-.project-images img {
-    touch-action: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-    .project-actions {
-        flex-direction: column;
-    }
-    .project-actions .btn {
-        width: 100%;
-    }
-    .project-card,
-    .skill-card,
-    .stat-card {
-        padding: 1rem;
-    }
+/* Remove duplicate and misplaced rules */
+@media (max-width: 575.98px) {
+    /* ...existing code... */
+    /* Remove duplicate .project-actions, .project-card, .skill-card, .stat-card, .main-gallery-image, .project-images img rules here */
 }
 
 /* Main image sizing */
