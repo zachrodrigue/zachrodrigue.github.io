@@ -3,29 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('themeToggle');
     const htmlElement = document.documentElement;
 
-    // Theme preference
-    const savedTheme = localStorage.getItem('theme') ||
-        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    htmlElement.setAttribute('data-bs-theme', savedTheme);
-    updateThemeIcon(savedTheme);
-
-    themeToggle.addEventListener('click', function() {
-        const currentTheme = htmlElement.getAttribute('data-bs-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        htmlElement.setAttribute('data-bs-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-    });
-
-    function updateThemeIcon(theme) {
-        const icon = themeToggle.querySelector('i');
-        if (theme === 'dark') {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        } else {
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
-        }
+    // Force dark theme and disable toggle
+    htmlElement.setAttribute('data-bs-theme', 'dark');
+    if (themeToggle) {
+        themeToggle.style.display = 'none';
     }
 
     // Navbar scroll effect (optimized with requestAnimationFrame)
