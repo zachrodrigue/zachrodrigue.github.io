@@ -15,6 +15,15 @@ Welcome! This portfolio highlights my expertise in data cleaning, exploration, v
 
 ## 🌟 Portfolio Highlights
 
+### Wittig School Database
+
+- **Goal:** Build a comprehensive database for student management, courses, and enrollments.
+- **Approach:** Designed ERD & schema, modeled entities and relationships, and developed SQL queries for insights (enrollment trends, departmental distribution, course popularity, gender breakdown). Provided recommendations for operations.
+- **Tech:** SQL, MySQL, MySQL Workbench, EER Diagram  
+  [Database Doc (PDF)](/documents/reports/wittig_sms_doc.pdf) | [Project Report (PDF)](/documents/reports/Wittig_School_Project_Report.pdf)
+
+---
+
 ### Furniture Sales Analysis
 
 - **Goal:** Uncover sales trends and growth opportunities for a furniture retailer.
@@ -96,6 +105,16 @@ Let's connect or collaborate:
 
 - 📩 [deguenonrodrigue@gmail.com](mailto:deguenonrodrigue@gmail.com)
 - 💼 [LinkedIn](https://linkedin.com/in/rodriguezachariedeguenon)
+- 📊 [Kaggle](https://www.kaggle.com/rodriguedeguenon)
+- 🐙 [GitHub](https://github.com/zachrodrigue)
+
+---
+
+📜 **License:**  
+
+- Content: All Rights Reserved  
+- Code: Personal, non-commercial use allowed  
+🔄 **Last Updated:** June 2025
 - 📊 [Kaggle](https://www.kaggle.com/rodriguedeguenon)
 - 🐙 [GitHub](https://github.com/zachrodrigue)
 
