@@ -86,89 +86,34 @@ document.addEventListener('DOMContentLoaded', function() {
         hireMeBtn.classList.add('pulse');
     }
 
-    // Project filtering (optimized)
-    const filterButtons = document.querySelectorAll('.project-filters button');
-    const projects = document.querySelectorAll('.project-detail');
-    let filterTimeout;
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            const filter = button.dataset.filter;
-            clearTimeout(filterTimeout);
-            filterTimeout = setTimeout(() => {
-                projects.forEach(project => {
-                    if (filter === 'all' || project.dataset.categories.includes(filter)) {
-                        project.style.opacity = '0';
-                        setTimeout(() => {
-                            project.style.display = 'block';
-                            setTimeout(() => {
-                                project.style.opacity = '1';
-                            }, 50);
-                        }, 100);
-                    } else {
-                        project.style.opacity = '0';
-                        setTimeout(() => {
-                            project.style.display = 'none';
-                        }, 100);
-                    }
-                });
-            }, 0);
-        });
-    });
-
-    // Tech tag filtering (optimized)
-    const techTags = document.querySelectorAll('.clickable-tech-tag');
-    techTags.forEach(tag => {
-        tag.addEventListener('click', () => {
-            const tech = tag.dataset.tech;
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            const btn = document.querySelector(`.project-filters button[data-filter="${tech}"]`);
-            if (btn) btn.classList.add('active');
-            clearTimeout(filterTimeout);
-            filterTimeout = setTimeout(() => {
-                projects.forEach(project => {
-                    if (project.dataset.categories.includes(tech)) {
-                        project.style.opacity = '0';
-                        setTimeout(() => {
-                            project.style.display = 'block';
-                            setTimeout(() => {
-                                project.style.opacity = '1';
-                            }, 50);
-                        }, 100);
-                    } else {
-                        project.style.opacity = '0';
-                        setTimeout(() => {
-                            project.style.display = 'none';
-                        }, 100);
-                    }
-                });
-            }, 0);
-        });
-    });
-
-    // Back to top button (reuse existing element if present)
-    let backToTop = document.querySelector('.back-to-top');
-    if (!backToTop) {
-        backToTop = document.createElement('a');
-        backToTop.href = '#';
-        backToTop.className = 'back-to-top';
-        backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
-        backToTop.title = 'Back to Top';
-        document.body.appendChild(backToTop);
-    }
-    function toggleBackToTop() {
-        if (window.scrollY > 300) {
-            backToTop.style.display = 'flex';
-        } else {
-            backToTop.style.display = 'none';
+    // --- Begin: Projects page specific JS (reworked filtering & pagination) ---
+    if (window.location.pathname.endsWith('projects.html')) {
+        if (window.lightGallery) {
+            [
+                'furniture-main',
+                'bellabeat-main',
+                'cyclistic-main',
+                'mintclassics-main',
+                'wittig-main',
+                'sales-performance-main'
+            ].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) lightGallery(el, { plugins: [lgZoom], speed: 400, selector: 'a' });
+            });
+            [
+                'furniture-thumbs',
+                'bellabeat-thumbs',
+                'cyclistic-thumbs',
+                'mintclassics-thumbs',
+                'wittig-thumbs',
+                'sales-performance-thumbs'
+            ].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) lightGallery(el, { plugins: [lgZoom], speed: 400 });
+            });
         }
     }
-    window.addEventListener('scroll', toggleBackToTop, { passive: true });
-    backToTop.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    // --- End: Projects page specific JS ---
 
     // Contact form submission (minimal DOM access)
     const contactForm = document.getElementById('contactForm');
@@ -198,21 +143,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // REMOVE this block: Project image gallery functionality (event delegation)
-    // document.querySelectorAll('.thumbnail-images').forEach(container => {
-    //     container.addEventListener('click', function(e) {
-    //         const img = e.target.closest('img');
-    //         if (!img) return;
-    //         const mainImage = container.closest('.project-images').querySelector('.main-image img');
-    //         if (mainImage && img.src !== mainImage.src) {
-    //             const tempSrc = mainImage.src;
-    //             mainImage.src = img.src;
-    //             img.src = tempSrc;
-    //         }
-    //     });
-    // });
-
-    // REMOVE all code related to image modal and .clickable-project-image
 });
 
 // Add event listener for window resize to handle responsive adjustments
@@ -234,4 +164,3 @@ window.addEventListener('resize', function() {
         }
     });
 });
-

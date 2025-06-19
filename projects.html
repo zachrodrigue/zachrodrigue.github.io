@@ -123,45 +123,18 @@
         </div>
     </section>
 
-    <!-- Projects Filter -->
-    <section class="section-py bg-light">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <div class="project-filters mb-4">
-                        <button class="btn btn-outline-primary active" data-filter="all">All Projects</button>
-                        <button class="btn btn-outline-primary" data-filter="Excel">Excel</button>
-                        <button class="btn btn-outline-primary" data-filter="SQL">SQL</button>
-                        <button class="btn btn-outline-primary" data-filter="R">R</button>
-                        <button class="btn btn-outline-primary" data-filter="Power BI">Power BI</button>
-                        <button class="btn btn-outline-primary" data-filter="Tableau">Tableau</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Animated Scroll Down Icon -->
-        <div class="text-center mt-2">
-            <span class="scroll-down-icon" id="scrollDownIcon" style="
-                display: inline-block;
-                font-size: 2rem;
-                color: #0d6efd;
-                cursor: pointer;
-            ">
-                <i class="fas fa-angle-down"></i>
-            </span>
-        </div>
-    </section>
-    
     <!-- Projects Section -->
-    <section class="section-py">
+    <section class="pt-4 section-py">
         <div class="container">
             <!-- Wittig School Project (1st: image left, content right) -->
             <div class="project-detail mb-5" id="wittig-school-project" data-categories="SQL">
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-6">
                         <div class="project-images">
-                            <div class="main-image">
-                                <img src="img/projects/wittig_school/wittig_school_erd.webp" alt="Wittig School Project" class="img-fluid rounded main-gallery-image" loading="lazy" draggable="false">
+                            <div class="main-image" id="wittig-main">
+                                <a href="img/projects/wittig_school/wittig_school_erd.webp" data-lg-size="1200-900">
+                                    <img src="img/projects/wittig_school/wittig_school_erd.webp" alt="Wittig School Project" class="img-fluid rounded main-gallery-image" loading="lazy" draggable="false">
+                                </a>
                             </div>
                             <div class="thumbnail-images" id="wittig-thumbs">
                                 <a href="img/projects/wittig_school/wittig_1.webp" data-lg-size="800-600">
@@ -231,8 +204,10 @@
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-6 order-lg-2">
                         <div class="project-images">
-                            <div class="main-image">
-                                <img src="img/projects/furniture_sales/dashboard_screenshot.webp" alt="Furniture Sales Analysis Dashboard" class="img-fluid rounded main-gallery-image" loading="lazy" draggable="false">
+                            <div class="main-image" id="furniture-main">
+                                <a href="img/projects/furniture_sales/dashboard_screenshot.webp" data-lg-size="1200-900">
+                                    <img src="img/projects/furniture_sales/dashboard_screenshot.webp" alt="Furniture Sales Analysis Dashboard" class="img-fluid rounded main-gallery-image" loading="lazy" draggable="false">
+                                </a>
                             </div>
                             <div class="thumbnail-images" id="furniture-thumbs">
                                 <a href="img/projects/furniture_sales/shipping_mode_pie_chart1.webp" data-lg-size="800-600">
@@ -299,13 +274,87 @@
                 </div>
             </div>
 
-            <!-- Bellabeat Project (3rd: image left, content right) -->
-            <div class="project-detail mb-5" id="bellabeat-project" data-categories="R">
+            <!-- Sales Performance Project (3rd:image left, content right) -->
+            <div class="project-detail mb-5" id="sales-performance-project" data-categories="Excel">
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-6">
                         <div class="project-images">
-                            <div class="main-image">
-                                <img src="img/projects/bellabeat/bellabeat-detail.webp" alt="Bellabeat Analysis Dashboard" class="img-fluid rounded main-gallery-image" loading="lazy" draggable="false">
+                            <div class="main-image" id="sales-performance-main">
+                                <a href="img/projects/sales_performance/dashboard.webp" data-lg-size="1200-900">
+                                    <img src="img/projects/sales_performance/dashboard.webp" alt="Sales Performance Dashboard" class="img-fluid rounded main-gallery-image" loading="lazy" draggable="false">
+                                </a>
+                            </div>
+                            <div class="thumbnail-images" id="sales-performance-thumbs">
+                                <a href="img/projects/sales_performance/kpi.webp" data-lg-size="800-600">
+                                    <img src="img/projects/sales_performance/kpi.webp" alt="Sales Performance Thumbnail 1" class="img-fluid rounded" loading="lazy" draggable="false">
+                                </a>
+                                <a href="img/projects/sales_performance/monthly_revenue.webp" data-lg-size="800-600">
+                                    <img src="img/projects/sales_performance/monthly_revenue.webp" alt="Sales Performance Thumbnail 2" class="img-fluid rounded" loading="lazy" draggable="false">
+                                </a>
+                                <a href="img/projects/sales_performance/regional_sales.webp" data-lg-size="800-600">
+                                    <img src="img/projects/sales_performance/regional_sales.webp" alt="Sales Performance Thumbnail 3" class="img-fluid rounded" loading="lazy" draggable="false">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="project-content">
+                            <h2 class="project-title">Sales Performance Analysis</h2>
+                            <p class="project-subtitle">Unlocking insights from sales data</p>
+
+                            <div class="project-meta">
+                                <div class="meta-item">
+                                    <span class="meta-label">Client:</span>
+                                    <span class="meta-value">Case Study</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Date:</span>
+                                    <span class="meta-value">June 2025</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span class="meta-label">Category:</span>
+                                    <span class="meta-value">Excel</span>
+                                </div>
+                            </div>
+                            <div class="project-description">
+                                <h5>Project Overview</h5>
+                                <p>Analyzed sales data to identify trends and provide actionable insights for the sales team.</p>
+
+                                <h5 class="mt-4">Key Achievements</h5>
+                                <ul>
+                                    <li>Developed interactive dashboard to visualize sales performance.</li>
+                                    <li>Identified key performance factors driving sales and customer engagement.</li>
+                                    <li>Provided actionable recommendations to optimize sales, profit and operations.</li>
+                                </ul>
+
+                                <h5 class="mt-4">Technologies Used</h5>
+                                <div class="tech-tags">
+                                    <span class="badge bg-primary-light text-primary">Excel</span>
+                                    <span class="badge bg-primary-light text-primary">Pivot Tables</span>
+                                    <span class="badge bg-primary-light text-primary">Pivot Charts</span>
+                                </div>
+                            </div>
+
+                            <div class="project-buttons mt-4">
+                                <a href="https://1drv.ms/x/c/67671d55fee3b341/EaiyR5FXZrlNiWQ7eH2IKiMBH7tWman6gIlu_Nsj3rd_AA" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Dashboard</a>
+                                <a href="/documents/reports/sales_performance_report.pdf" class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-file-pdf me-1"></i> Read Report
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bellabeat Project (4th: image right, content left) -->
+            <div class="project-detail mb-5" id="bellabeat-project" data-categories="R">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="project-images">
+                            <div class="main-image" id="bellabeat-main">
+                                <a href="img/projects/bellabeat/bellabeat-detail.webp" data-lg-size="1200-900">
+                                    <img src="img/projects/bellabeat/bellabeat-detail.webp" alt="Bellabeat Analysis Dashboard" class="img-fluid rounded main-gallery-image" loading="lazy" draggable="false">
+                                </a>
                             </div>
                             <div class="thumbnail-images" id="bellabeat-thumbs">
                                 <a href="img/projects/bellabeat/bellabeat-1.webp" data-lg-size="800-600">
@@ -320,7 +369,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 order-lg-1">
                         <div class="project-content">
                             <h2 class="project-title">Bellabeat Data Analysis</h2>
                             <p class="project-subtitle">Leveraging fitness data to drive product innovation</p>
@@ -378,8 +427,10 @@
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-6 order-lg-2">
                         <div class="project-images">
-                            <div class="main-image">
-                                <img src="img/projects/cyclistic/cyclistic.webp" alt="Cyclistic Analysis Dashboard" class="img-fluid rounded main-gallery-image" loading="lazy" draggable="false">
+                            <div class="main-image" id="cyclistic-main">
+                                <a href="img/projects/cyclistic/cyclistic.webp" data-lg-size="1200-900">
+                                    <img src="img/projects/cyclistic/cyclistic.webp" alt="Cyclistic Analysis Dashboard" class="img-fluid rounded main-gallery-image" loading="lazy" draggable="false">
+                                </a>
                             </div>
                             <div class="thumbnail-images" id="cyclistic-thumbs">
                                 <a href="img/projects/cyclistic/cyclistic-1.webp" data-lg-size="800-600">
@@ -446,17 +497,14 @@
             </div>
             
             <!-- Mint Classics Project (5th: image left, content right) -->
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Mint Classics Project (5th: image left, content right) -->
             <div class="project-detail" id="mintclassics-project" data-categories="SQL">
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-6">
                         <div class="project-images">
-                            <div class="main-image">
-                                <img src="img/projects/mint_classics/mint-classics-detail.webp" alt="Mint Classics ERD" class="img-fluid rounded main-gallery-image" loading="lazy" draggable="false">
+                            <div class="main-image" id="mintclassics-main">
+                                <a href="img/projects/mint_classics/mint-classics-detail.webp" data-lg-size="1200-900">
+                                    <img src="img/projects/mint_classics/mint-classics-detail.webp" alt="Mint Classics ERD" class="img-fluid rounded main-gallery-image" loading="lazy" draggable="false">
+                                </a>
                             </div>
                             <div class="thumbnail-images" id="mintclassics-thumbs">
                                 <a href="img/projects/mint_classics/mint1.webp" data-lg-size="800-600">
@@ -524,12 +572,6 @@
                 </div>
             </div>
         </div>
-        <!-- Pagination Bar -->
-        <nav aria-label="Projects pagination" class="mt-4">
-            <ul class="pagination justify-content-center" id="projectsPagination">
-                <!-- Pagination items will be injected by JS -->
-            </ul>
-        </nav>
     </section>
 
     <!-- Back to Top Button -->
@@ -563,190 +605,8 @@
     <!-- Custom JS -->
     <script src="js/main.js" defer></script>
     
-    <!-- Projects Filter JS -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Filter projects
-            const filterButtons = document.querySelectorAll('.project-filters button');
-            const projects = document.querySelectorAll('.project-detail');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Update active button
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    
-                    const filter = button.dataset.filter;
-                    
-                    // Filter projects
-                    projects.forEach(project => {
-                        if (filter === 'all' || project.dataset.categories.split(' ').includes(filter)) {
-                            project.style.display = 'block';
-                        } else {
-                            project.style.display = 'none';
-                        }
-                    });
-                });
-            });
-            
-            // Tech tag filtering
-            const techTags = document.querySelectorAll('.clickable-tech-tag');
-            techTags.forEach(tag => {
-                tag.addEventListener('click', () => {
-                    const tech = tag.dataset.tech;
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    document.querySelector(`.project-filters button[data-filter="${tech}"]`).classList.add('active');
-                    projects.forEach(project => {
-                        if (project.dataset.categories.split(' ').includes(tech)) {
-                            project.style.display = 'block';
-                        } else {
-                            project.style.display = 'none';
-                        }
-                    });
-                });
-            });
-            
-            // Back to top button
-            const backToTopButton = document.getElementById('backToTop');
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 300) {
-                    backToTopButton.style.display = 'block';
-                } else {
-                    backToTopButton.style.display = 'none';
-                }
-            });
-            
-            backToTopButton.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-            
-            // Ensure all projects are visible on initial load
-            projects.forEach(project => {
-                project.style.display = 'block';
-            });
-
-            // PAGINATION LOGIC
-            const projectsPerPage = 2;
-            let currentPage = 1;
-            let filteredProjects = Array.from(document.querySelectorAll('.project-detail'));
-            const paginationContainer = document.getElementById('projectsPagination');
-
-            function showProjectsPage(page) {
-                const start = (page - 1) * projectsPerPage;
-                const end = start + projectsPerPage;
-                filteredProjects.forEach((proj, idx) => {
-                    proj.style.display = (idx >= start && idx < end) ? 'block' : 'none';
-                });
-                renderPagination(page, Math.ceil(filteredProjects.length / projectsPerPage));
-            }
-
-            function renderPagination(page, totalPages) {
-                paginationContainer.innerHTML = '';
-                if (totalPages <= 1) return;
-                // Prev button
-                const prev = document.createElement('li');
-                prev.className = 'page-item' + (page === 1 ? ' disabled' : '');
-                prev.innerHTML = `<a class="page-link" href="#" tabindex="-1">&laquo;</a>`;
-                prev.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    if (page > 1) {
-                        currentPage = page - 1;
-                        showProjectsPage(currentPage);
-                        window.scrollTo({ top: document.querySelector('.section-py').offsetTop - 100, behavior: 'smooth' });
-                    }
-                });
-                paginationContainer.appendChild(prev);
-
-                // Page numbers
-                for (let i = 1; i <= totalPages; i++) {
-                    const li = document.createElement('li');
-                    li.className = 'page-item' + (i === page ? ' active' : '');
-                    li.innerHTML = `<a class="page-link" href="#">${i}</a>`;
-                    li.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        currentPage = i;
-                        showProjectsPage(currentPage);
-                        window.scrollTo({ top: document.querySelector('.section-py').offsetTop - 100, behavior: 'smooth' });
-                    });
-                    paginationContainer.appendChild(li);
-                }
-
-                // Next button
-                const next = document.createElement('li');
-                next.className = 'page-item' + (page === totalPages ? ' disabled' : '');
-                next.innerHTML = `<a class="page-link" href="#">&raquo;</a>`;
-                next.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    if (page < totalPages) {
-                        currentPage = page + 1;
-                        showProjectsPage(currentPage);
-                        window.scrollTo({ top: document.querySelector('.section-py').offsetTop - 100, behavior: 'smooth' });
-                    }
-                });
-                paginationContainer.appendChild(next);
-            }
-
-            function updateFilteredProjects() {
-                filteredProjects = Array.from(document.querySelectorAll('.project-detail')).filter(
-                    proj => proj.style.display !== 'none'
-                );
-            }
-
-            // Initial pagination
-            updateFilteredProjects();
-            showProjectsPage(currentPage);
-
-            // Hook into filter buttons to reset pagination
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // After filter, update filteredProjects and reset to page 1
-                    setTimeout(() => {
-                        // Only visible projects
-                        filteredProjects = Array.from(document.querySelectorAll('.project-detail')).filter(
-                            proj => proj.style.display !== 'none'
-                        );
-                        currentPage = 1;
-                        showProjectsPage(currentPage);
-                    }, 250);
-                });
-            });
-
-            // Hook into tech tag filtering to reset pagination
-            techTags.forEach(tag => {
-                tag.addEventListener('click', () => {
-                    setTimeout(() => {
-                        filteredProjects = Array.from(document.querySelectorAll('.project-detail')).filter(
-                            proj => proj.style.display !== 'none'
-                        );
-                        currentPage = 1;
-                        showProjectsPage(currentPage);
-                    }, 250);
-                });
-            });
-            
-            // Scroll down icon click: scroll to first visible project
-            document.getElementById('scrollDownIcon').addEventListener('click', function() {
-                const firstVisible = Array.from(document.querySelectorAll('.project-detail'))
-                    .find(el => el.style.display !== 'none');
-                if (firstVisible) {
-                    firstVisible.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    </script>
     <!-- LightGallery JS -->
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/zoom/lg-zoom.umd.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (window.lightGallery) {
-                lightGallery(document.getElementById('furniture-thumbs'), { plugins: [lgZoom], speed: 400 });
-                lightGallery(document.getElementById('bellabeat-thumbs'), { plugins: [lgZoom], speed: 400 });
-                lightGallery(document.getElementById('cyclistic-thumbs'), { plugins: [lgZoom], speed: 400 });
-                lightGallery(document.getElementById('mintclassics-thumbs'), { plugins: [lgZoom], speed: 400 });
-                lightGallery(document.getElementById('wittig-thumbs'), { plugins: [lgZoom], speed: 400 });
-            }
-        });
-    </script>
 </body>
 </html>
