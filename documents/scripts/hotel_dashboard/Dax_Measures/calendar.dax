@@ -1,0 +1,50 @@
+Calendar = 
+
+    VAR _MinYear = YEAR(MIN('Reservations Data'[Booking Date]))
+    VAR _MaxYear = YEAR(MAX('Reservations Data'[Booking Date]))
+    RETURN
+    ADDCOLUMNS(
+        FILTER(
+        CALENDARAUTO(),
+        YEAR([Date])>= _MinYear && 
+        YEAR([Date])<= _MaxYear
+        ),
+        "Year", YEAR([Date]),
+        "Month Number", MONTH([Date]),
+        "Month Long", FORMAT([Date],"mmmm"),
+        "Month Short", FORMAT([Date],"MMM"),
+        "Qtr", "Q" & QUARTER([Date]),
+        "Year Qtr", YEAR([Date]) & " Q" & QUARTER([Date]),
+        "Days",DAY([Date]),
+        "Week Number", WEEKDAY([Date],2),
+        "Weekday Long", FORMAT([Date], "DDDD"),
+        "Weekday Short", FORMAT([Date], "DDD"),
+        "WeekType", IF(WEEKDAY([Date],2)<6,"Weekday","Weekend"),
+        "End of Month", EOMONTH([Date],0),
+        "Start of Month", EOMONTH([Date],-1)+1,
+
+        -- This is for some Season,
+        "Season",
+        SWITCH(
+            TRUE(),
+            MONTH([Date]) IN { 12, 1,2}, "Winter",
+            MONTH([Date]) IN { 3, 4,5}, "Spring",
+            MONTH([Date]) IN { 6, 7,8}, "Summer",
+            MONTH([Date]) IN { 9, 10,11}, "Autumn"
+        ),
+
+        -- Some Holidays in Ghana. 
+        "Is New Year's Day", IF(MONTH([Date]) = 1 &&
+        DAY([Date]) = 1, TRUE(), FALSE()),
+        "Is Labour Day", IF(MONTH([Date]) = 5 &&
+        DAY([Date]) = 1, TRUE(), FALSE()),
+        "Is Founders' Day",IF(MONTH([Date]) = 8 &&
+        DAY([Date]) = 4, TRUE(), FALSE()),
+        "Is Ghanaian Independence Day",IF(MONTH([Date]) = 3 &&
+        DAY([Date]) = 6, TRUE(), FALSE()),
+        "Is Christmas Day",IF(MONTH([Date]) = 12 &&
+        DAY([Date]) = 25, TRUE(), FALSE()),
+        "Is Boxing Day", IF(MONTH([Date]) = 2 &&
+        DAY([Date]) = 26, TRUE(), FALSE())
+
+    )

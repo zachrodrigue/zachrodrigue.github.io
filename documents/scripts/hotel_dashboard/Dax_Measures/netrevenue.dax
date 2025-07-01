@@ -1,0 +1,102 @@
+// ============================
+// ✅ NET REVENUE MEASURES
+// ============================
+
+
+// 💵 Net Revenue (Only from non-cancelled bookings)
+Net Revenue = 
+    CALCULATE(
+        [Gross Revenue],
+        'Reservations Data'[Cancellation Status] = "No"
+    )
+
+
+// 🏷️ Dynamic title for Net Revenue visuals
+Title NR = 
+    VAR _SelectedMonth = SELECTEDVALUE('Calendar'[Month Short])
+    RETURN
+        IF (
+            _SelectedMonth <> BLANK(),
+            _SelectedMonth & " Net Revenue",
+            "Total Net Revenue"
+        )
+
+
+// 🔁 Net Revenue from the same period last year
+LY Net Revenue = 
+    CALCULATE(
+        [Net Revenue],
+        DATEADD('Calendar'[Date], -1, YEAR)
+    )
+
+
+// 🔁 Net Revenue from the previous month
+LM Net Revenue = 
+    CALCULATE(
+        [Net Revenue],
+        DATEADD('Calendar'[Date], -1, MONTH)
+    )
+
+
+// 📈 Year-over-Year change in Net Revenue (% with arrow)
+YoY Change Net Revenue = 
+    VAR _ArrowUp = UNICHAR(10548)
+    VAR _ArrowDown = UNICHAR(10549)
+    VAR _YoYChange = 
+        DIVIDE(
+            [Net Revenue] - [LY Net Revenue],
+            [LY Net Revenue]
+        )
+    VAR _Format = FORMAT(_YoYChange, "0.0%")
+    RETURN
+        IF(
+            _YoYChange > 0,
+            _ArrowUp & "+" & _Format,
+            _ArrowDown & _Format
+        )
+
+
+// 📉 Month-over-Month change in Net Revenue (% with arrow)
+MoM Change Net Revenue = 
+    VAR _ArrowUp = UNICHAR(10548)
+    VAR _ArrowDown = UNICHAR(10549)
+    VAR _MoMChange = 
+        DIVIDE(
+            [Net Revenue] - [LM Net Revenue],
+            [LM Net Revenue]
+        )
+    VAR _Format = FORMAT(_MoMChange, "0.0%")
+    RETURN
+        IF(
+            _MoMChange > 0,
+            _ArrowUp & "+" & _Format,
+            _ArrowDown & _Format
+        )
+
+
+// 💲 MoM raw value change (for label without %)
+MoM Change NR = 
+    VAR _MoMChange = 
+        [Net Revenue] - [LM Net Revenue]
+    VAR _Format = FORMAT(_MoMChange, "$#,##")
+    RETURN
+        IF(
+            [Net Revenue] > [LM Net Revenue],
+            "+" & _Format,
+            _Format
+        )
+
+
+// 🎯 Conditional Formatting helper (1 = positive MoM trend)
+CF MoM Change NR = 
+    VAR _MoMChange = 
+        DIVIDE(
+            [Net Revenue] - [LM Net Revenue],
+            [LM Net Revenue]
+        )
+    RETURN
+        IF(
+            _MoMChange > 0,
+            1,
+            0
+        )

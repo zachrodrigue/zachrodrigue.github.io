@@ -1,0 +1,117 @@
+// ============================
+// 💰 GROSS REVENUE MEASURES
+// ============================
+
+
+// ✅ Base Gross Revenue calculation (Total + Extras)
+Gross Revenue = 
+    SUMX(
+        'Reservations Data',
+        'Reservations Data'[Total Amount ($)] + 'Reservations Data'[Extra Services Costs ($)]
+    )
+
+
+// 🏷️ Dynamic title for Gross Revenue card
+Title GR = 
+    VAR _SelectedMonth = SELECTEDVALUE('Calendar'[Month Short])
+    RETURN
+        IF (
+            _SelectedMonth <> BLANK(),
+            _SelectedMonth & " Gross Revenue",
+            "Total Gross Revenue"
+        )
+
+
+// 🔁 Gross Revenue for the same period last year
+LY Gross Revenue = 
+    CALCULATE(
+        [Gross Revenue],
+        DATEADD('Calendar'[Date], -1, YEAR)
+    )
+
+
+// 🔁 Gross Revenue for the previous month
+LM Gross Revenue = 
+    CALCULATE(
+        [Gross Revenue],
+        DATEADD('Calendar'[Date], -1, MONTH)
+    )
+
+
+// 📈 Year-over-Year (YoY) Change % with direction arrow
+YoY Change Gross Revenue = 
+    VAR _ArrowUp = UNICHAR(10548)
+    VAR _ArrowDown = UNICHAR(10549)
+    VAR _YoYChange = 
+        DIVIDE(
+            [Gross Revenue] - [LY Gross Revenue],
+            [LY Gross Revenue]
+        )
+    VAR _Format = FORMAT(_YoYChange, "0.0%")
+    RETURN
+        IF(
+            _YoYChange > 0,
+            _ArrowUp & "+" & _Format,
+            _ArrowDown & _Format
+        )
+
+
+// 📉 Month-over-Month (MoM) Change % with direction arrow
+MoM Change Gross Revenue = 
+    VAR _ArrowUp = UNICHAR(10548)
+    VAR _ArrowDown = UNICHAR(10549)
+    VAR _MoMChange = 
+        DIVIDE(
+            [Gross Revenue] - [LM Gross Revenue],
+            [LM Gross Revenue]
+        )
+    VAR _Format = FORMAT(_MoMChange, "0.0%")
+    RETURN
+        IF(
+            _MoMChange > 0,
+            _ArrowUp & "+" & _Format,
+            _ArrowDown & _Format
+        )
+
+
+// ✅ Conditional formatting helper for MoM KPI (1 = up, 0 = down)
+CF MoM Change GR = 
+    VAR _MoMChange = 
+        DIVIDE(
+            [Gross Revenue] - [LM Gross Revenue],
+            [LM Gross Revenue]
+        )
+    RETURN
+        IF(
+            _MoMChange > 0,
+            1,
+            0
+        )
+
+
+// 📌 Tooltip value title (used for breakdown visuals)
+Tooltip Title 01 = 
+    VAR _Nationality = SELECTEDVALUE('Reservations Data'[Nationality])
+    VAR _BookingChannel = SELECTEDVALUE('Reservations Data'[Booking Channel])
+    VAR _PaymentMethods = SELECTEDVALUE('Reservations Data'[Payment Method])
+    RETURN 
+        SWITCH(
+            TRUE(),
+            _Nationality <> BLANK(), _Nationality,
+            _BookingChannel <> BLANK(), _BookingChannel,
+            _PaymentMethods <> BLANK(), _PaymentMethods
+        )
+
+
+// 📌 Tooltip label title (prefix text)
+Tooltip Title 02 = 
+    VAR _Nationality = SELECTEDVALUE('Reservations Data'[Nationality])
+    VAR _BookingChannel = SELECTEDVALUE('Reservations Data'[Booking Channel])
+    VAR _PaymentMethods = SELECTEDVALUE('Reservations Data'[Payment Method])
+    RETURN 
+        SWITCH(
+            TRUE(),
+            _Nationality <> BLANK(), "Customer Nationality: ",
+            _BookingChannel <> BLANK(), "Customer Booking Channel: ",
+            _PaymentMethods <> BLANK(), "Customer Payment Methods: "
+        )
