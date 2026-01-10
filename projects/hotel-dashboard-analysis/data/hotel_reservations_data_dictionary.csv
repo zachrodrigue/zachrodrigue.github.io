@@ -1,0 +1,24 @@
+Column Name,Description
+Guest ID,Unique identifier assigned to each guest. Format: GUEST-YYYY-NNNNN.
+Guest Name,Full name of the guest who made the booking.
+Nationality,Country of origin or citizenship of the guest.
+Contact Phone,Contact phone number of the guest.
+Reservation ID,Unique identifier for each reservation. Format: RES-YYYY-NNNNN.
+Check-In Date,"Date when the guest checked into the hotel. (Nullable, as not all reservations resulted in check-ins.)"
+Check-Out Date,Date when the guest checked out of the hotel. (Nullable for pending or canceled reservations.)
+Room Type,"Type of room booked (e.g., Single, Double, Suite)."
+Booking Channel,"Channel through which the reservation was made (e.g., Online (Expedia), Corporate, Walk-In, Direct)."
+Payment Method,"Mode of payment used for the booking (e.g., Credit Card, Bank Transfer, Cash)."
+Total Amount ($),Total cost of the booking in USD.
+Number of Guests,Total number of guests associated with the reservation. (Nullable if not specified.)
+Booking Date,Date when the reservation was made.
+Lead Time (days),Number of days between the booking date and the check-in date.
+Special Requests,"Any special requests made by the guest (e.g., Late check-in, Crib). (Nullable if no request was made.)"
+Amenities Used,"Hotel amenities availed by the guest during their stay (e.g., Room Service, Spa). (Nullable if no amenities were used.)"
+Stay Reason,"Purpose of the guest's stay (e.g., Vacation, Business, Family Trip, Conference)."
+Cancellation Status,Indicates whether the reservation was canceled (Yes) or not (No).
+Extra Services Costs ($),Additional costs incurred by the guest for extra services like spa treatments or dining. (Nullable if no extra services were used.)
+Guest Rating (1-5),"Rating given by the guest for their stay, ranging from 1 (poor) to 5 (excellent). (Nullable for no feedback.)"
+Customer Review,Feedback provided by the guest in text form. (Nullable for no feedback.)
+Loyalty Member,"Loyalty program status of the guest (e.g., Gold, Silver, Bronze, None). (Nullable if not part of the loyalty program.)"
+Visit Frequency,"Frequency of the guest's visits to the hotel (e.g., First-time, Regular, VIP)."

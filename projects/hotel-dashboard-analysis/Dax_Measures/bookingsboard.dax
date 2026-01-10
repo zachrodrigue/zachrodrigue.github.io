@@ -1,0 +1,91 @@
+// ============================
+// 📘 BOOKINGS BOARD MEASURES
+// ============================
+
+// ✅ Total number of bookings
+Total Bookings = 
+    COUNTROWS('Reservations Data')
+
+
+// ✅ Number of bookings that were NOT cancelled
+CheckedIn Bookings = 
+    CALCULATE(
+        [Total Bookings],
+        'Reservations Data'[Cancellation Status] = "No"
+    )
+
+
+// ✅ Number of bookings that were cancelled
+Cancelled Bookings = 
+    CALCULATE(
+        [Total Bookings],
+        'Reservations Data'[Cancellation Status] = "Yes"
+    )
+
+
+// 🏷️ Dynamic title for bookings count visuals
+Title TB = 
+    VAR _SelectedMonth = SELECTEDVALUE('Calendar'[Month Short])
+    RETURN
+        IF (
+            _SelectedMonth <> BLANK(),
+            _SelectedMonth & " Bookings",
+            "Total Bookings"
+        )
+
+
+// 📝 Caption showing top 2 months with most cancellations
+Caption Cancelled Bookings = 
+    CONCATENATEX(
+        TOPN(
+            2,
+            SUMMARIZE(
+                FILTER(
+                    'Calendar',
+                    [Cancelled Bookings] <> BLANK()
+                ),
+                'Calendar'[Month Short], 
+                "CancelledReservations", [Cancelled Bookings]
+            ),
+            [CancelledReservations],
+            DESC
+        ),
+        'Calendar'[Month Short] & " " &
+        FORMAT([CancelledReservations], "#,##"),
+        UNICHAR(10) & "|" & " ",
+        [CancelledReservations], DESC
+    )
+
+
+// 📝 Caption showing top 2 months with most check-ins
+Caption CheckedIn Bookings = 
+    CONCATENATEX(
+        TOPN(
+            2,
+            SUMMARIZE(
+                FILTER(
+                    'Calendar',
+                    [CheckedIn Bookings] <> BLANK()
+                ),
+                'Calendar'[Month Short], 
+                "CheckedInReservations", [CheckedIn Bookings]
+            ),
+            [CheckedInReservations],
+            DESC
+        ),
+        'Calendar'[Month Short] & " " &
+        FORMAT([CheckedInReservations], "#,##"),
+        UNICHAR(10) & "|" & " ",
+        [CheckedInReservations], DESC
+    )
+
+
+// 🎛️ Switch between “Clear” and “Values” view (used in visuals)
+SwitchValues = 
+    VAR _ActiveSwitch = SELECTEDVALUE(SwitchValues[Switch])
+    RETURN
+        SWITCH(
+            TRUE(),
+            _ActiveSwitch = "Clear", "#ffffff00",
+            _ActiveSwitch = "Values", "#000000"
+        )

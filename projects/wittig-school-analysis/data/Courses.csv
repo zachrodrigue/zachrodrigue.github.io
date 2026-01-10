@@ -1,0 +1,51 @@
+CourseID,CourseName,DepartmentID
+CRS0001,Data Structures,DPT001
+CRS0002,Algorithms,DPT001
+CRS0003,Operating Systems,DPT001
+CRS0004,Computer Networks,DPT001
+CRS0005,Artificial Intelligence,DPT001
+CRS0006,Database Systems,DPT001
+CRS0007,Software Engineering,DPT001
+CRS0008,Web Development,DPT001
+CRS0009,Mobile App Development,DPT001
+CRS0010,Cybersecurity,DPT001
+CRS0011,Circuit Analysis,DPT002
+CRS0012,Electromagnetics,DPT002
+CRS0013,Control Systems,DPT002
+CRS0014,Digital Signal Processing,DPT002
+CRS0015,Microprocessors,DPT002
+CRS0016,Power Systems,DPT002
+CRS0017,Communication Systems,DPT002
+CRS0018,Analog Electronics,DPT002
+CRS0019,Embedded Systems,DPT002
+CRS0020,VLSI Design,DPT002
+CRS0021,Principles of Management,DPT003
+CRS0022,Marketing,DPT003
+CRS0023,Finance,DPT003
+CRS0024,Accounting,DPT003
+CRS0025,Business Ethics,DPT003
+CRS0026,Organizational Behavior,DPT003
+CRS0027,Operations Management,DPT003
+CRS0028,Entrepreneurship,DPT003
+CRS0029,Business Strategy,DPT003
+CRS0030,E-commerce,DPT003
+CRS0031,Introduction to Psychology,DPT004
+CRS0032,Cognitive Psychology,DPT004
+CRS0033,Social Psychology,DPT004
+CRS0034,Developmental Psychology,DPT004
+CRS0035,Abnormal Psychology,DPT004
+CRS0036,Neuropsychology,DPT004
+CRS0037,Research Methods,DPT004
+CRS0038,Psychological Assessment,DPT004
+CRS0039,Counseling,DPT004
+CRS0040,Psychotherapy,DPT004
+CRS0041,Genetics,DPT005
+CRS0042,Cell Biology,DPT005
+CRS0043,Microbiology,DPT005
+CRS0044,Biochemistry,DPT005
+CRS0045,Molecular Biology,DPT005
+CRS0046,Evolution,DPT005
+CRS0047,Plant Biology,DPT005
+CRS0048,Animal Physiology,DPT005
+CRS0049,Immunology,DPT005
+CRS0050,Ecology,DPT005

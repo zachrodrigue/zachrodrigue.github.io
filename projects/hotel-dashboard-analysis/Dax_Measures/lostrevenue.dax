@@ -1,0 +1,139 @@
+// ============================
+// ❌ LOST REVENUE MEASURES
+// ============================
+
+
+// ✅ Lost Revenue (only for cancelled bookings)
+Lost Revenue = 
+    CALCULATE(
+        [Gross Revenue],
+        'Reservations Data'[Cancellation Status] = "Yes"
+    )
+
+
+// 🏷️ Dynamic title for Lost Revenue visuals
+Title LR = 
+    VAR _SelectedMonth = SELECTEDVALUE('Calendar'[Month Short])
+    RETURN
+        IF (
+            _SelectedMonth <> BLANK(),
+            _SelectedMonth & " Lost Revenue",
+            "Total Lost Revenue"
+        )
+
+
+// 🔁 Lost Revenue from the same period last year
+LY Lost Revenue = 
+    CALCULATE(
+        [Lost Revenue],
+        DATEADD('Calendar'[Date], -1, YEAR)
+    )
+
+
+// 🔁 Lost Revenue from the previous month
+LM Lost Revenue = 
+    CALCULATE(
+        [Lost Revenue],
+        DATEADD('Calendar'[Date], -1, MONTH)
+    )
+
+
+// 📈 YoY change in Lost Revenue (% + direction)
+YoY Change Lost Revenue = 
+    VAR _ArrowUp = UNICHAR(10548)
+    VAR _ArrowDown = UNICHAR(10549)
+    VAR _YoYChange = 
+        DIVIDE(
+            [Lost Revenue] - [LY Lost Revenue],
+            [LY Lost Revenue]
+        )
+    VAR _Format = FORMAT(_YoYChange, "0.0%")
+    RETURN
+        IF(
+            _YoYChange > 0,
+            _ArrowUp & "+" & _Format,
+            _ArrowDown & _Format
+        )
+
+
+// 📉 MoM change in Lost Revenue (% + direction)
+MoM Change Lost Revenue = 
+    VAR _ArrowUp = UNICHAR(10548)
+    VAR _ArrowDown = UNICHAR(10549)
+    VAR _MoMChange = 
+        DIVIDE(
+            [Lost Revenue] - [LM Lost Revenue],
+            [LM Lost Revenue]
+        )
+    VAR _Format = FORMAT(_MoMChange, "0.0%")
+    RETURN
+        IF(
+            _MoMChange > 0,
+            _ArrowUp & "+" & _Format,
+            _ArrowDown & _Format
+        )
+
+
+// 💲 MoM Change (Raw Value Difference, formatted)
+MoM Change LR = 
+    VAR _MoMChange = 
+        [Lost Revenue] - [LM Lost Revenue]
+    VAR _Format = FORMAT(_MoMChange, "$#,##")
+    RETURN
+        IF(
+            [Lost Revenue] > [LM Lost Revenue],
+            "+" & _Format,
+            _Format
+        )
+
+
+// 📊 Percentage of Gross Revenue that was lost
+Pct Lost Revenue = 
+    VAR _PctLR = 
+        DIVIDE(
+            [Lost Revenue],
+            [Gross Revenue]
+        )
+    RETURN
+        IF(_PctLR = BLANK(), 0, _PctLR)
+
+
+// 🎯 Conditional Formatting (Color) for MoM Lost Revenue
+CF MoM Change LR = 
+    VAR _MoMChange = 
+        DIVIDE(
+            [Lost Revenue] - [LM Lost Revenue],
+            [LM Lost Revenue]
+        )
+    RETURN
+        IF(
+            _MoMChange > 0,
+            1,
+            0
+        )
+
+
+// 🎨 Color rules based on Lost Revenue Percentage
+CF Caption Lost Revenue = 
+    VAR _PctLR = [Pct Lost Revenue]
+    RETURN
+        SWITCH(
+            TRUE(),
+            _PctLR <= 0.05, "#4caf50",      // Green
+            _PctLR <= 0.15, "#bbc4a",       // Light green
+            _PctLR <= 0.25, "#ffc107",      // Amber
+            "#B25769"                       // Reddish
+        )
+
+
+// 💬 Feedback Caption based on Lost Revenue %
+Caption Lost Revenue = 
+    VAR _PctLR = [Pct Lost Revenue]
+    RETURN
+        SWITCH(
+            TRUE(),
+            _PctLR <= 0.05, "Excellent! Outstanding Booking Conversion",
+            _PctLR <= 0.15, "Good! High Booking Conversion",
+            _PctLR <= 0.25, "Fair! Consider Improving Conversion",
+            "Needs Attention! Low Booking Conversion"
+        )
