@@ -1,29 +1,34 @@
-# Python EDA Analysis
+# Exploratory Data Analysis: Bondora Peer-to-Peer Lending
 
 ## Project Overview
 
-Comprehensive Exploratory Data Analysis (EDA) using Python to uncover patterns, distributions, relationships, and insights in raw data. This project demonstrates end-to-end data exploration workflow from data loading through hypothesis generation.
+This project presents a comprehensive exploratory data analysis (EDA) of the Bondora peer-to-peer lending dataset, containing 409,951 loan records across 97 variables. The analysis employs descriptive statistics, data visualization, inferential hypothesis testing, and linear regression to examine factors influencing loan approval, interest rate determination, and borrower risk profiles. The work demonstrates core data analytics competencies including data cleaning, statistical testing, visualization, and explanatory modeling.
+
+**Dataset Source**: [Bondora P2P Loans - Kaggle](https://www.kaggle.com/datasets/marcobeyer/bondora-p2p-loans)
 
 ## Objective
 
-Conduct thorough exploratory data analysis to understand data structure, identify anomalies, generate hypotheses, and create a foundation for further statistical analysis or modeling.
+Uncover actionable insights into peer-to-peer lending patterns, risk pricing mechanisms, and demographic relationships within the Bondora platform through structured analysis of data structure, univariate/bivariate distributions, statistical hypothesis testing, and explanatory regression modeling.
 
-## Key Questions
+## Key Research Questions
 
-- What are the main distributions and patterns in the data?
-- Which variables are most significant and interesting?
-- Are there outliers, anomalies, or data quality issues?
-- What relationships exist between variables?
-- What hypotheses emerge from the data exploration?
+- What are the distributions of loan amounts, interest rates, and borrower demographics?
+- How does Bondora's credit rating system relate to interest rate pricing?
+- Are there gender-based differences in loan applications, approvals, or pricing?
+- What is the relationship between applied and approved loan amounts?
+- Which borrower characteristics indicate elevated default risk?
+- How do loan characteristics vary geographically across the platform?
 
 ## Key Deliverables
 
-- ✅ Comprehensive data exploration notebook with narrative
-- ✅ Distribution analysis for all variables
-- ✅ Correlation and relationship analysis
-- ✅ Data quality assessment and recommendations
-- ✅ Actionable insights and hypothesis generation
-- ✅ Professional visualizations and plots
+- Comprehensive data exploration notebook with narrative and statistical rigor
+- Univariate analysis of loan amounts, interest rates, durations, and borrower demographics
+- Correlation analysis and multicollinearity assessment
+- Statistical hypothesis testing (t-tests, ANOVA)
+- Multiple regression models (interest rate determination, loan approval amounts)
+- High-risk borrower identification and segmentation
+- Professional visualizations (distributions, boxplots, heatmaps)
+- Diagnostic assessment and model validation
 
 ## Technologies Used
 
@@ -32,104 +37,102 @@ Conduct thorough exploratory data analysis to understand data structure, identif
 - **NumPy** - Numerical computing
 - **matplotlib & seaborn** - Statistical data visualization
 - **plotly** - Interactive visualizations
-- **scipy & scikit-learn** - Statistical analysis and preprocessing
 - **Jupyter Notebook** - Interactive analysis environment
 
 ## Project Structure
 
 ```text
-python-eda-analysis/
-├── eda_analysis.ipynb              # Main EDA notebook (your deliverable)
-├── data/                            # Data directory
-│   ├── raw_data.csv                # Original dataset
-│   ├── data_summary.txt            # Data info from notebook
-│   └── README.md                   # Data documentation (FILL IN)
-├── plots/                           # Generated visualizations
-│   ├── distributions/
-│   │   ├── variable1_distribution.png
-│   │   ├── variable2_histogram.png
-│   │   └── ...
-│   ├── relationships/
-│   │   ├── correlation_heatmap.png
-│   │   ├── scatter_plots.png
-│   │   └── ...
-│   ├── outliers_and_anomalies.png
-│   └── summary_statistics.png
+bondora-loan-analysis/
+├── loan_analysis.ipynb             # Main EDA notebook
+├── data/                           # Data directory
+│   ├── LoanData.csv               # Original Bondora dataset (409,951 records)
+│   └── README.md                  # Data documentation
+├── plots/                          # Generated visualizations
+├── environment.yml                 # Conda environment specification
 ├── requirements.txt                # Python package dependencies
-├── environment.yml                 # Conda environment spec
-└── README.md                       # This file
+└── README.md                       # Project documentation
 ```
 
 ## Notebook Structure
 
-Your `eda_analysis.ipynb` should include these sections:
+The `loan_analysis.ipynb` is organized into five comprehensive parts:
 
-### 1. Introduction
+### Part 1: Setup and Data Loading
 
-- Project objective
-- Data source and context
-- Key questions to answer
+- Library imports and configuration
+- Selection of 18 analytical variables from 97-column dataset
+- Data type conversion and strategic missing value imputation
+- Initial data quality checks
 
-### 2. Data Loading & Overview
+### Part 2: Descriptive Analysis
 
-```python
-import pandas as pd
-import numpy as np
+- Summary statistics (mean, median, std, quartiles)
+- Univariate distribution analysis:
+  - Loan amounts (right-skewed, median ≈ 2,080 EUR)
+  - Interest rates by credit rating (monotonic risk-based pricing)
+  - Income distributions by gender
+  - Geographic concentration (Estonia, Finland dominant)
+  - Loan duration patterns
+  - Loan status composition
+- Bivariate correlation analysis (correlation matrix, heatmap)
+- High-risk borrower identification (debt-to-income > 0.35 + employment tenure < 1 year)
 
-# Load data
-df = pd.read_csv('data/raw_data.csv')
+### Part 3: Inferential Statistics
 
-# Quick overview
-df.shape, df.head(), df.info(), df.describe()
-```
+Hypothesis testing addressing four research questions:
 
-### 3. Data Quality Assessment
+- **H1**: Gender differences in applied loan amounts (t-test, p > 0.05, not significant)
+- **H2**: Gender differences in approved loan amounts (t-test, p < 0.05, significant)
+- **H3**: Gender differences in approval adjustment gaps (t-test, p > 0.05, not significant)
+- **H4**: Interest rate variation across credit ratings (ANOVA, p < 0.001, highly significant)
 
-- Missing values analysis
-- Duplicate detection
-- Data type validation
-- Outlier identification
+### Part 4: Regression Analysis
 
-### 4. Univariate Analysis
+**Model 1 - Interest Rate Determination**:
 
-- Distribution plots for each variable
-- Summary statistics (mean, median, std, etc.)
-- Skewness and kurtosis analysis
-- Box plots for continuous variables
-- Value counts for categorical variables
+- Specification: Interest = β₀ + β₁×Income + β₂×Rating + ε
+- R² = 0.605 (ratings explain 60.5% of rate variation)
+- Finding: Credit ratings dominate interest pricing; income effect modest
 
-### 5. Bivariate Analysis
+**Model 2 - Loan Approval Amount**:
 
-- Correlation analysis and heatmaps
-- Scatter plots for relationships
-- Cross-tabulations
-- Statistical tests (if applicable)
+- Specification: Approved Amount = β₀ + β₁×Applied Amount + β₂×Income + ε
+- R² = 0.93 (exceptional fit; 93% of variance explained)
+- Finding: Approvals closely track requests (~93%); income acts as modest moderator
 
-### 6. Multivariate Analysis
+### Part 5: Synthesis and Conclusions
 
-- PCA or dimensionality reduction (optional)
-- Clustering patterns (optional)
-- Feature interactions
-
-### 7. Findings & Insights
-
-- Key discoveries
-- Interesting patterns
-- Hypotheses for further analysis
-- Recommendations
+- Summary of key findings
+- Limitations and qualifications
+- Recommendations for future work
+- Dataset-specific research extensions
 
 ## How to Use
 
-### 1. Set Up Environment
+### 1. Prerequisites
+
+**Python Version**: 3.11+
+
+**Required Packages**:
+
+- pandas (data manipulation)
+- numpy (numerical computing)
+- matplotlib & seaborn (visualization)
+- plotly (interactive plots)
+- scipy & scikit-learn (statistical analysis)
+- statsmodels (regression modeling)
+- jupyter (notebook environment)
+
+### 2. Setup Environment
 
 #### Option A: Using Conda (Recommended)
 
 ```bash
 # Create environment
-conda env create -f environment.yml
+conda create -n bondora python=3.11 pandas numpy matplotlib seaborn plotly scipy scikit-learn statsmodels jupyter
 
 # Activate environment
-conda activate python-eda
+conda activate bondora
 
 # Start Jupyter
 jupyter notebook
@@ -140,187 +143,208 @@ jupyter notebook
 ```bash
 # Create virtual environment
 python -m venv venv
-source venv/Scripts/activate  # Windows: venv\Scripts\activate
+venv\Scripts\activate  # Windows
 
 # Install packages
-pip install -r requirements.txt
+pip install pandas numpy matplotlib seaborn plotly scipy scikit-learn statsmodels jupyter
 
 # Start Jupyter
 jupyter notebook
 ```
 
-### 2. Open and Run Notebook
+### 3. Open and Run Analysis
 
 ```bash
-# Jupyter opens in browser
-# Click on eda_analysis.ipynb
-# Run cells sequentially (Shift + Enter)
-# Or run all: Cell menu → Run All
+# Navigate to project directory
+cd bondora-loan-analysis
+
+# Start Jupyter
+jupyter notebook
+
+# Open loan_analysis.ipynb
+# Run cells sequentially (Shift + Enter) or all at once (Cell → Run All)
 ```
 
-### 3. Export Results
+## Key Findings
 
-```python
-# In your notebook, save plots:
-plt.savefig('../plots/plot_name.png', dpi=300, bbox_inches='tight')
-plt.savefig('../plots/plot_name.svg', format='svg', bbox_inches='tight')
+### Loan Market Structure
 
-# Export summary statistics to CSV
-summary_stats.to_csv('../data/summary_statistics.csv')
+- **Geographic Concentration**: Majority of loans originated in Estonia and Finland
+- **Loan Amount Distribution**: Right-skewed distribution (median ≈ 2,080 EUR); most borrowers seek modest amounts
+- **Loan Duration**: Clusters in 36–60 month range (standard medium-term consumer products)
+- **Portfolio Composition**: Dataset dominated by "Repaid" loans; limits assessment of current default risk
 
-# Export correlation matrix
-correlation_matrix.to_csv('../data/correlation_matrix.csv')
-```
+### Risk-Based Pricing Model
 
-## Useful Python Code Snippets
+- **Interest Rates by Rating**: Clear monotonic relationship—lower ratings (higher risk) face substantially higher rates
+- **Regression Finding**: Credit ratings explain ~60.5% of interest rate variation (R² = 0.605)
+- **Income Effect**: Statistically significant but economically modest negative effect on interest rates
+- **Validation**: ANOVA test confirms highly significant differences in interest rates across ratings (F >> 1, p < 0.001)
 
-### Quick Data Overview
+### Loan Approval Mechanics
 
-```python
-# First look at data
-print(f"Shape: {df.shape}")
-print(f"\nFirst few rows:\n{df.head()}")
-print(f"\nData types:\n{df.dtypes}")
-print(f"\nMissing values:\n{df.isnull().sum()}")
-print(f"\nBasic stats:\n{df.describe()}")
-```
+- **Applied vs. Approved**: Near-perfect correlation (r = 0.96); borrowers receive ~93% of requested amounts
+- **Approval Model**: R² = 0.93 indicating strong structural determinism
+- **Income Moderation**: Income has modest positive coefficient—higher-income borrowers receive marginally higher approvals
+- **Implication**: Suggests effective pre-screening or confidence in borrower self-assessment
 
-### Missing Data Analysis
+### Demographic Patterns
 
-```python
-# Visualize missing data
-import matplotlib.pyplot as plt
-missing = df.isnull().sum()
-missing[missing > 0].sort_values(ascending=False).plot(kind='barh')
-plt.title('Missing Values')
-plt.show()
-```
+- **Gender Equity**: No significant difference in applied amounts (p > 0.05)
+- **Approval Variation**: Slight but statistically significant difference in approved amounts by gender, though approval adjustment gaps do not differ (p > 0.05)
+- **Income Similarity**: Gender distributions in income show comparable medians with right-skewness
 
-### Distribution Plots
+### High-Risk Borrower Identification
 
-```python
-# Create subplots for numeric columns
-numeric_cols = df.select_dtypes(include=[np.number]).columns
-fig, axes = plt.subplots(len(numeric_cols), 1, figsize=(10, 3*len(numeric_cols)))
-for idx, col in enumerate(numeric_cols):
-    df[col].hist(bins=30, ax=axes[idx])
-    axes[idx].set_title(f'Distribution of {col}')
-plt.tight_layout()
-plt.show()
-```
+- **Risk Criteria**: Debt-to-income ratio > 0.35 + employment tenure < 1 year
+- **Prevalence**: ~15% of borrowers meet high-risk criteria
+- **Profile**: Elevated debt service burden with employment instability
 
-### Correlation Heatmap
+### Correlation Structure
 
-```python
-import seaborn as sns
-# Correlation matrix
-corr = df.corr(numeric_only=True)
-plt.figure(figsize=(10, 8))
-sns.heatmap(corr, annot=True, cmap='coolwarm', center=0)
-plt.title('Correlation Matrix')
-plt.show()
-```
+- **Weak to Moderate Correlations**: Most variables exhibit weak interdependence
+- **Low Multicollinearity**: Favorable for regression modeling
+- **Implication**: Lending decisions incorporate multiple independent factors rather than single predictor dominance
 
-### Outlier Detection
+## Analysis Methodology
 
-```python
-# Using IQR method
-Q1 = df.quantile(0.25)
-Q3 = df.quantile(0.75)
-IQR = Q3 - Q1
-outliers = ((df < (Q1 - 1.5 * IQR)) | (df > (Q3 + 1.5 * IQR))).sum()
-print(outliers)
-```
+### Data Preparation
 
-## Package Descriptions
+- **Variable Selection**: 18 analytically relevant variables selected from 97-column dataset
+- **Missing Data Strategy**:
+  - Categorical employment duration: filled with "Unknown" category
+  - Numeric history variables (prior loans): filled with 0 (new borrower indicator)
+  - Gender: missing values coded as category 2 ("Unknown")
+  - Credit ratings: excluded from rating-specific analyses when missing
+
+### Statistical Methods
+
+- **Descriptive Statistics**: Summary statistics, distributions, visualizations
+- **Correlation Analysis**: Pearson correlations, heatmaps, multicollinearity assessment
+- **Hypothesis Testing**:
+  - Independent samples t-tests (gender effects, applied amounts, approval gaps)
+  - One-way ANOVA (interest rates across ratings)
+  - Significance level: α = 0.05
+- **Regression Modeling**: Ordinary Least Squares (OLS) linear regression with diagnostic assessment
+
+### Package Descriptions
 
 | Package | Purpose |
 | --------- | --------- |
 | **pandas** | Data manipulation, cleaning, analysis |
 | **numpy** | Numerical operations, arrays |
-| **matplotlib** | Static visualization (line plots, histograms, etc.) |
-| **seaborn** | Statistical visualization (heatmaps, distributions) |
-| **plotly** | Interactive visualizations (hover, zoom, etc.) |
-| **scipy** | Statistical tests and functions |
-| **scikit-learn** | Machine learning, preprocessing, scaling |
+| **matplotlib** | Static visualization (histograms, boxplots, scatter plots) |
+| **seaborn** | Statistical visualization (boxplots, heatmaps) |
+| **plotly** | Interactive visualizations (if needed) |
+| **scipy** | Statistical tests (t-tests, ANOVA, distributions) |
+| **statsmodels** | Regression modeling, diagnostics, model summary |
+| **scikit-learn** | Statistical utilities and preprocessing |
 | **jupyter** | Interactive notebook environment |
 
-## Best Practices for EDA Notebooks
+## Important Limitations and Qualifications
 
-✅ **DO:**
+### Data Characteristics
 
-- Add markdown cells explaining your thinking
-- Use clear variable and chart titles
-- Document your findings as you go
-- Include comments in code
-- Save high-quality plots
-- Create a summary section
+- **Temporal Scope**: Dataset heavily weighted toward "Repaid" loans suggests historical data rather than recent originations; limits assessment of current platform performance
+- **Missing Ratings**: ~11% of observations lack credit ratings; excluded from rating-specific analyses
+- **Geographic Focus**: Estonia and Finland dominate; findings may not generalize to other markets
+- **Sample Composition**: Self-selected Bondora borrowers; patterns may not extend to traditional credit or excluded populations
 
-❌ **DON'T:**
+### Methodological Constraints
 
-- Leave code cells uncommented
-- Create 50 plots without interpretation
-- Use generic variable names (x, y, data1)
-- Skip the narrative
-- Forget to document data assumptions
+- **Cross-Sectional Design**: Cannot establish causal relationships; analyzes associations only
+- **Unobserved Confounders**: Credit history depth, loan purpose, collateral, borrower sophistication not captured
+- **Linear Assumptions**: Nonlinear relationships or threshold effects not modeled
+- **Risk Classification**: High-risk borrower thresholds arbitrary; not validated against actual defaults
 
-## Common EDA Mistakes to Avoid
+### Model Qualifications
 
-1. **Not understanding the data first** - Always start with basic info()
-2. **Ignoring missing data** - Always check and document missing values
-3. **Missing outlier analysis** - Outliers can be important or errors
-4. **Only univariate analysis** - Look for relationships between variables
-5. **Poor visualization choices** - Match visualization to question being asked
-6. **No conclusions** - Always summarize what you found and what it means
+- **Regression Purpose**: Explanatory inference, not prediction; findings describe historical associations
+- **Diagnostic Issues**: Modest departures from normality and heteroscedasticity noted; mitigated by large sample size (n > 400,000)
+- **External Validity**: Bondora context-specific; may not generalize to other platforms or traditional banking
 
-## Data Quality Checklist
+## Completed Analysis Checklist
 
-- [ ] Load data and check shape
-- [ ] Check for missing values
-- [ ] Identify and handle duplicates
-- [ ] Validate data types
-- [ ] Check value ranges (are they reasonable?)
-- [ ] Look for outliers
-- [ ] Identify categorical vs. continuous variables
-- [ ] Check consistency in formatting
-- [ ] Document any data quality issues
+- [x] Data loading and quality assessment completed
+- [x] Missing value imputation with documented strategy
+- [x] 18 analytically relevant variables selected and cleaned
+- [x] Univariate analysis: all variables analyzed with distributions documented
+- [x] Distribution plots: loan amounts, interest rates, income, geographic, duration, status
+- [x] Summary statistics: all numeric variables documented
+- [x] Correlation analysis: correlation matrix and heatmap generated
+- [x] High-risk borrower segmentation: 15% identified via multifactorial criteria
+- [x] Hypothesis tests: 4 research questions tested via t-tests and ANOVA
+- [x] Regression modeling: 2 OLS models (interest rates, approval amounts)
+- [x] Diagnostic assessment: residual plots, multicollinearity, normality evaluation
+- [x] Key findings documented with interpretation and qualifications
+- [x] Limitations explicitly stated with appropriate caveats
+- [x] Future research directions identified
 
-## Analysis Checklist
+## Recommended Extensions and Future Work
 
-- [ ] Univariate analysis complete for all variables
-- [ ] Distribution plots created and saved
-- [ ] Summary statistics documented
-- [ ] Correlation analysis performed
-- [ ] Relationship plots created
-- [ ] Outliers identified and assessed
-- [ ] Hypotheses generated
-- [ ] Key findings documented
-- [ ] Plots exported to plots/ folder
-- [ ] Notebook summarized and concluded
+### Temporal and Cohort Analysis
 
-## Next Steps After EDA
+- Stratify by loan origination year to assess pattern evolution
+- Assess whether findings generalize across time periods
 
-Once EDA is complete, you might:
+### Default Risk Validation
 
-1. **Statistical Testing** - Hypothesis testing on relationships
-2. **Feature Engineering** - Create new variables based on insights
-3. **Predictive Modeling** - Build ML models using discovered patterns
-4. **Causal Analysis** - Investigate cause-and-effect relationships
-5. **Dashboard Creation** - Visualize findings for stakeholders
-6. **Report Writing** - Create formal report from findings
+- Link identified risk indicators (debt-to-income, employment duration) to actual defaults
+- Calibrate high-risk classification thresholds against actual performance
+- Conduct survival analysis or time-to-event modeling
 
-## Resources
+### Geographic and Segment Analysis
+
+- Compare patterns across full platform geography
+- Assess region-specific lending dynamics
+- Analyze segment-specific approval and pricing patterns
+
+### Predictive Modeling
+
+- Develop supervised learning models (logistic regression, ensemble methods)
+- Predict loan performance and assess out-of-sample accuracy
+- Compare explanatory models with predictive approaches
+
+### Advanced Statistical Techniques
+
+- Nonparametric or spline-based methods for nonlinear relationships
+- Interaction effect testing (e.g., income effects by rating category)
+- Multiple imputation for sensitivity analysis on missing ratings
+- Quasi-experimental design exploiting policy changes or external shocks
+
+### Debt Burden Analysis
+
+- Incorporate existing liabilities and repayment history variables
+- Develop comprehensive affordability assessment beyond income alone
+- Analyze relationship between debt burden and approval/pricing decisions
+
+### Borrower Experience Analysis
+
+- Compare outcomes for first-time vs. repeat borrowers
+- Assess whether repeat borrowing shows improved performance
+- Identify progressive lending patterns
+
+## Key Resources
 
 - 📚 [Pandas Documentation](https://pandas.pydata.org/docs/)
 - 📊 [Matplotlib Gallery](https://matplotlib.org/stable/gallery/index.html)
 - 🔍 [Seaborn Examples](https://seaborn.pydata.org/examples.html)
-- 📈 [Plotly Documentation](https://plotly.com/python/)
+- 📈 [Statsmodels Documentation](https://www.statsmodels.org/)
 - 🤖 [Scikit-learn Guide](https://scikit-learn.org/stable/)
+- 📖 [SciPy Stats Documentation](https://docs.scipy.org/doc/scipy/reference/stats.html)
 
-## Author
+## Author & Affiliation
 
-Rodrigue Z. Deguenon
+### Rodrigue Z. Deguenon
 
-## Date
+Data Analytics Portfolio Project
+
+## Project Date
 
 January 2026
+
+## Citation
+
+If referencing this analysis, please cite:
+
+Deguenon, R.Z. (2026). Exploratory Data Analysis: Bondora Peer-to-Peer Lending. Data Carpentry Portfolio Project.

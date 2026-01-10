@@ -35,70 +35,67 @@ Create a comprehensive database to support operational decision-making for stude
 
 ```text
 wittig-school-analysis/
-├── database_files/
-│   ├── wittig_school_db_script.sql    # Database creation & schema
-│   ├── wittig_insight_queries.sql     # Analysis queries
-│   └── ERD_diagram.png                 # Entity-Relationship Diagram
-├── data/                               # Sample data & schema info
-│   ├── schema_documentation.md
-│   ├── sample_data.csv
-│   └── README.md                      # Data dictionary
-├── plots/                              # Query results & insights
-│   ├── enrollment_by_department.csv
-│   ├── course_popularity.csv
-│   ├── gender_distribution.csv
-│   └── student_performance.csv
-└── README.md                          # This file
+├── Database/
+│   ├── wittig_school_db_script.sql         # Database creation & schema (DDL)
+│   ├── wittig_school_erd.mwb.bak           # ERD backup file
+│   └── wittig_school_model.mwb             # MySQL Workbench model
+├── data/
+│   ├── Courses.csv                         # Course data (mock data)
+│   ├── Departments.csv                     # Department data
+│   ├── Enrollments.csv                     # Enrollment records
+│   ├── Instructors.csv                     # Instructor data
+│   └── Students.csv                        # Student data
+├── plots/                                   # Query results & visualizations
+├── reports_queries.sql                     # Analysis queries (DML)
+├── requirements.txt                        # Project dependencies
+└── README.md                               # This file
 ```
 
 ## Database Schema
 
-### Core Tables
+### Core Tables (5 Tables)
 
-- **Students**: Student information, enrollment status, demographics
-- **Departments**: Academic departments with chair information
-- **Courses**: Course offerings, descriptions, credits
-- **Enrollments**: Student-Course relationships with grades
-- **Instructors**: Faculty information and department assignments
-- **Classrooms**: Physical spaces and capacity information
+- **Students**: StudentID, Name, Gender (Male/Female/Other), DOB, DepartmentID
+- **Departments**: DepartmentID, DepartmentName (unique identifier)
+- **Courses**: CourseID, CourseName, DepartmentID (offering department)
+- **Enrollments**: EnrollmentID, StudentID, CourseID, EnrollmentDate
+- **Instructors**: InstructorID, Name, Gender, DepartmentID, HireDate, CourseID (primary course)
 
 ### Key Relationships
 
-- Students → Enrollments → Courses (many-to-many)
-- Courses → Departments (one-to-many)
-- Students → Departments (through Enrollments, for major tracking)
-- Instructors → Courses (one-to-many)
-- Courses → Classrooms (one-to-many, scheduled classes)
+- **One-to-Many**: Departments → Students, Instructors, Courses
+- **Many-to-Many**: Students ↔ Courses (via Enrollments table)
+- **One-to-One**: Each course taught by one instructor
+- **Referential Integrity**: Foreign keys maintain data consistency across all tables
+- **Normalization**: Designed in 3rd Normal Form (3NF) to eliminate redundancy
 
 ## Key Findings Summary
 
-### Enrollment Trends
+### Enrollment & Course Analysis
 
-- Total enrolled students: [X] across [Y] departments
-- Growth rate: [X]% year-over-year
-- Peak enrollment periods: [Semesters/Terms]
-- Declining programs: [Departments] requiring attention
+- **Top 3 Courses by Enrollment**:
+  1. Counseling: 205 students
+  2. Immunology: 204 students
+  3. Cybersecurity: 204 students
+- **Departmental Distribution**:
+  - Largest: Electrical Engineering (210 students)
+  - Smallest: Biological Sciences (192 students)
+- **Student Enrollment Status**: 100% of students are enrolled in at least one course (no unenrolled students)
+- **Average Course Load**: 9 courses per student (significantly higher than typical 5-6 course institutional standard)
 
-### Course Analysis
+### Gender Distribution Insights
 
-- Most popular courses: [Specific courses] with [capacity] students
-- Underutilized courses: [Courses] with [%] enrollment rates
-- Course distribution across departments: [Details]
-- Average class size: [X] students
+- **Overall Balance**: Equal representation across most courses with departmental variations
+- **Course with Highest Male Enrollment**: Operations Systems
+- **Course with Highest Female Enrollment**: Evolution & Finance
+- **Departmental Patterns**: Gender distribution varies by course; some programs show clear gender preferences
 
-### Demographic Insights
+### Data Quality & Integrity
 
-- Gender distribution: [X]% male, [Y]% female, [Z]% other
-- Diversity by department: [Analysis]
-- International student enrollment: [%]
-- Age demographics: [Distribution]
-
-### Academic Performance
-
-- Average GPA by department: [Data]
-- Course success rates: [Completion and pass rates]
-- Student retention: [Year-to-year persistence]
-- At-risk student identification: [Criteria]
+- All referential integrity constraints validated
+- No orphaned records (students without valid departments, courses without valid departments)
+- Consistent data types across all imported tables
+- Complete enrollment records with valid foreign key relationships
 
 ## How to Reproduce
 
@@ -142,7 +139,7 @@ ORDER BY TotalStudents DESC;
 
 ### View Schema
 
-Open `ERD_diagram.png` to see the database structure visually, or:
+Open `wittig_school_erd.png` to see the database structure visually, or:
 
 ```sql
 -- View table structure
@@ -207,11 +204,40 @@ DESCRIBE enrollments;
 
 ## Strategic Recommendations
 
-1. **Enrollment Management**: Address declining programs or plan growth for expanding ones
-2. **Course Planning**: Adjust course offerings based on demand and utilization data
-3. **Resource Allocation**: Optimize classroom and faculty resources based on analysis
-4. **Diversity Initiatives**: Use demographic data to support inclusion goals
-5. **Academic Support**: Identify at-risk students for early intervention
+### 1. Course Load Management (Priority)
+
+- **Challenge**: Average 9 courses per student exceeds institutional standard (5-6 courses)
+- **Action**: Implement academic advising to help students manage heavy workloads
+- **Goal**: Balance academic rigor with student well-being and success rates
+- **Impact**: May improve student retention and academic performance
+
+### 2. Support High-Enrollment Courses
+
+- **Focus**: Counseling (205), Immunology (204), and Cybersecurity (204)
+- **Action**: Allocate additional resources and faculty support to manage demand
+- **Strategy**: Consider adding course sections or hiring additional instructors
+- **Benefit**: Maintain course quality despite high enrollment
+
+### 3. Strengthen Underperforming Departments
+
+- **Target**: Biological Sciences (192 students - smallest)
+- **Action**: Investigate reasons for lower enrollment (curriculum, marketing, prerequisites)
+- **Strategy**: Review course offerings and consider program improvements
+- **Goal**: Increase enrollment to match institutional averages
+
+### 4. Diversity & Gender Balance Initiatives
+
+- **Current State**: Unequal gender distribution in specific programs (Operations Systems skews male; Evolution & Finance skews female)
+- **Action**: Develop targeted recruitment and retention programs
+- **Strategy**: Mentor and support underrepresented genders in each program
+- **Goal**: Achieve better gender balance across all departments
+
+### 5. Departmental Growth Planning
+
+- **Leverage**: Electrical Engineering's success (210 students - largest)
+- **Action**: Study and replicate success factors from high-enrollment departments
+- **Apply**: Share best practices with smaller departments
+- **Outcome**: Support balanced growth across all departments
 
 ## Files Reference
 
@@ -230,5 +256,5 @@ June 2025
 
 ## Links
 
-- 📄 [Full Report](../../documents/reports/Wittig_School_Project_Report.pdf)
-- 📋 [Database Documentation](../../documents/reports/wittig_sms_doc.pdf)
+- 📄 [Full Report](./reports/Wittig_School_Project_Report.pdf)
+- 📋 [Database Documentation](./reports/wittig_sms_doc.pdf)

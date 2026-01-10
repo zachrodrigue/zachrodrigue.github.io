@@ -33,65 +33,132 @@ Analyze smart device fitness data to uncover trends in device usage and user beh
 
 ```text
 bellabeat-analysis/
-├── bellabeat_analysis.Rmd      # Main R Markdown analysis document
-├── bellabeat_script.R          # R analysis script
-├── data/                        # Data files
-│   ├── daily_activity.csv
-│   ├── sleep_day.csv
-│   ├── heart_rate_seconds.csv
-│   └── README.md               # Data documentation
-├── plots/                       # Generated visualizations (PNG/SVG)
+├── notebooks/
+│   └── capstone-project-bellabeat.ipynb  # Main EDA notebook with full analysis
+├── scripts/
+│   └── bellabeat_script.R               # R analysis script
+├── data/                                 # Data files
+│   ├── daily_activity.csv              # Daily activity metrics
+│   ├── sleep_day.csv                   # Sleep tracking data
+│   └── hourlyIntensities_merged.csv    # Hourly intensity data
+├── plots/                                # Generated visualizations
 │   ├── activity_distribution.png
-│   ├── sleep_patterns.png
-│   └── user_segments.png
-├── requirements.txt            # R package dependencies
-└── README.md                   # This file
+│   ├── intensity_by_time.png
+│   ├── steps_vs_calories.png
+│   ├── steps_vs_sedentary.png
+│   ├── activity_vs_sleep.png
+│   └── weekday_vs_weekend.png
+├── reports/
+│   └── bellabeat-report.pdf             # Comprehensive analysis report
+├── requirements.txt                      # R package dependencies
+└── README.md                             # Project documentation
 ```
 
 ## Key Findings Summary
 
-- **Usage Distribution**: Identified three main user segments based on daily activity levels (sedentary, lightly active, very active)
-- **Sleep Patterns**: Found correlation between activity levels and sleep duration
-- **Peak Times**: Weekday patterns show highest activity in early morning and evening hours
-- **Device Engagement**: Certain features show significantly higher engagement among premium users
+### Activity Patterns
+
+- **Step Distribution**: Right-skewed distribution with peak at 8,000-10,000 steps/day (average: 7,671 steps)
+- **Peak Activity Times**: Highest intensity occurs 5-7 PM (17:00-19:00) with gradual decline after 7 PM
+- **Weekday Consistency**: No significant difference between weekday and weekend activity levels
+- **Steps-Calories Correlation**: Strong positive correlation between daily steps and calories burned
+- **Activity Achievement**: Only ~2% of users meet WHO recommendation of 150 minutes weekly moderate activity
+
+### Sleep & Sedentary Behaviors
+
+- **Sleep Compliance**: 55% of users meet the recommended 7+ hours (420 minutes) of sleep per night
+- **Sedentary-Activity Relationship**: Clear negative correlation—users with more steps have fewer sedentary minutes
+- **Activity-Sleep Trade-off**: Weak negative correlation between activity level and sleep duration
+- **Sleep Variability**: High variance in sleep patterns, indicating multiple influencing factors
+
+### User Demographics & Participation
+
+- **Study Population**: 33 participants in activity data, 24 in sleep data
+- **Data Collection**: 936 daily activity observations, 410 sleep records, 22,099 hourly intensity records
+- **Average Metrics**: 2,313 calories/day; 419 minutes average sleep (close to 420-minute recommendation)
 
 ## Data Source & Size
 
-- **Source**: Kaggle Bellabeat Fitness Tracking Data
-- **Time Period**: March - May 2016
-- **Records**: ~940 million rows across multiple tables
-- **Format**: CSV files (daily aggregates and raw records)
+- **Source**: [FitBit Fitness Tracker Data](https://www.kaggle.com/datasets/arashnic/fitbit) via Kaggle
+- **Collection Method**: Amazon Mechanical Turk survey respondents (Mobius)
+- **Time Period**: December 3 - December 5, 2016
+- **Participants**: 30 eligible Fitbit users who consented to data sharing
+- **Datasets**:
+  - Daily Activity: 936 records × 15 variables
+  - Sleep Data: 410 records × 3 variables (after removing 3 duplicates)
+  - Hourly Intensity: 22,099 records × 4 variables
+- **Format**: CSV files with minute-level and daily aggregated outputs
 
 ## How to Reproduce
 
-### Option 1: Using R
+### Prerequisites
 
-```r
-# Install required packages
-install.packages(c("tidyverse", "ggplot2", "dplyr", "lubridate"))
+- R (version 3.6+)
+- Jupyter Notebook or RStudio
+- Libraries: tidyverse, lubridate, skimr, janitor, ggplot2
 
-# Run the analysis
-rmarkdown::render("bellabeat_analysis.Rmd")
+### Option 1: Run in Jupyter (Recommended)
+
+```bash
+# Navigate to project directory
+cd bellabeat-analysis
+
+# Install R kernel for Jupyter (if needed)
+R -e "install.packages('IRkernel'); IRkernel::installspec()"
+
+# Start Jupyter
+jupyter notebook
+
+# Open and run: notebooks/capstone-project-bellabeat.ipynb
 ```
 
-### Option 2: Using RStudio
+### Option 2: Run in RStudio
 
-1. Open `bellabeat_analysis.Rmd` in RStudio
-2. Click "Knit" to generate HTML report with all visualizations
+1. Open RStudio
+2. Install required packages:
+
+   ```r
+   install.packages(c("tidyverse", "lubridate", "skimr", "janitor"))
+   ```
+
+3. Open `scripts/bellabeat_script.R` or run cells from the notebook
+
+### Option 3: Using R Command Line
+
+```bash
+# Run the analysis script
+Rscript scripts/bellabeat_script.R
+```
 
 ## Methodology
 
-- **Data Cleaning**: Handled missing values and outliers
-- **Exploratory Analysis**: Distribution analysis, correlation studies
-- **Segmentation**: User clustering based on activity patterns
-- **Visualization**: Time-series trends, comparative visualizations
-- **Recommendations**: Strategic insights based on findings
+### Data Preparation
+
+- Loaded three datasets from Fitbase export (daily activity, sleep, hourly intensity)
+- Cleaned and validated data:
+  - Removed 3 duplicate records from sleep data
+  - Removed 4 observations with zero steps, distance, and calories (invalid data)
+  - Converted date/time columns to appropriate formats
+  - Standardized column names to lowercase
+- Merged daily activity and sleep data on user ID and date (24 common participants)
+- Converted numeric columns to integer types for analysis consistency
+
+### Analysis Components
+
+1. **Exploratory Analysis**: Summary statistics, distributions, and trend visualization
+2. **Time-Series Analysis**: Hourly intensity patterns throughout the day
+3. **Correlation Studies**: Activity-sleep, steps-calories, steps-sedentary relationships
+4. **Comparative Analysis**: Weekday vs. weekend activity patterns
+5. **Goal Achievement**: Percentage of users meeting WHO recommendations (150 min activity, 420 min sleep)
+6. **Visualization**: Distribution plots, scatter plots with trend lines, time-series charts
 
 ## Files Reference
 
-- **Main Report**: `bellabeat_analysis.Rmd` - Comprehensive analysis with narrative
-- **Visualizations**: See `plots/` folder for all generated graphics
-- **Data**: See `data/README.md` for detailed data dictionary
+- **Main Analysis**: `notebooks/capstone-project-bellabeat.ipynb` - Complete Jupyter notebook with narrative analysis
+- **R Script**: `scripts/bellabeat_script.R` - Standalone R analysis code
+- **Visualizations**: See `plots/` folder for all generated charts and graphs
+- **Report**: `reports/bellabeat-report.pdf` - Formal analysis report with findings and recommendations
+- **Data Documentation**: Raw data files in `data/` folder with source information
 
 ## Author
 
@@ -104,4 +171,5 @@ January 2025
 ## Links
 
 - 🔗 [View on Kaggle](https://www.kaggle.com/code/rodriguedeguenon/capstone-project-bellabeat)
-- 📄 [Full Report](../../documents/reports/bellabeat-report.pdf)
+- 📄 [Full Report](./reports/bellabeat-report.pdf)
+- 📊 [Jupyter Notebook](./notebooks/capstone-project-bellabeat.ipynb)

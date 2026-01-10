@@ -17,10 +17,10 @@ Analyze the Mint Classics database to identify optimization opportunities for in
 
 ## Key Achievements
 
-- ✅ Identified Warehouse South as a candidate for closure, supporting strategic business decision
-- ✅ Planned redistribution of 79,380 units of inventory to other warehouses without overburdening them
-- ✅ Identified slow-moving products and low inventory turnover ratios to reduce excess inventory
-- ✅ Provided data-driven recommendations for product line optimization
+- Identified Warehouse South as a candidate for closure, supporting strategic business decision
+- Planned redistribution of 79,380 units of inventory to other warehouses without overburdening them
+- Identified slow-moving products and low inventory turnover ratios to reduce excess inventory
+- Provided data-driven recommendations for product line optimization
 
 ## Technologies Used
 
@@ -33,34 +33,55 @@ Analyze the Mint Classics database to identify optimization opportunities for in
 
 ```text
 mint-classics-analysis/
-├── eda_script.sql              # Main SQL analysis queries
-├── data/                        # Sample data and schema
-│   ├── schema_diagram.png
-│   ├── sample_data.csv
-│   └── README.md               # Data documentation
-├── plots/                       # Query results and visualizations
-│   ├── warehouse_analysis.csv
-│   ├── product_performance.csv
-│   └── inventory_levels.csv
-├── README.md                   # This file
-└── ANALYSIS_NOTES.md          # Detailed query explanations
+├── data/
+│   └── Mint_Classics_Database/          # Database files and schema
+├── database/
+│   ├── mintclassicsDB.sql              # Database creation script
+│   ├── wittig_school_erd.mwb.bak       # ERD backup file
+│   └── wittig_school_model.mwb         # MySQL Workbench model
+├── queries/
+│   └── mintclassics_queries.sql         # Analysis queries
+├── plots/                               # Visualizations and results exports
+├── reports/                             # Analysis reports and findings
+├── eda_script.sql                       # Main EDA SQL script
+└── README.md                            # This file
 ```
 
 ## Key Findings Summary
 
-- **Warehouse Performance**: Warehouse South has lowest utilization (36.1% capacity); identified for consolidation
-- **Inventory Distribution**: 79,380 units can be redistributed without exceeding 85% capacity limits
-- **Slow-Moving Products**: Classic Cars (1968 Ford Mustang) and vintage motorcycles have 10+ year inventory turnover
-- **Profitability**: Ships and trains generate 35% less revenue than motorcycles despite similar stock levels
-- **Optimal Closure Plan**: Move inventory in phases to maintain operations during transition
+### Warehouse Analysis
+
+- **Warehouse South Consolidation**: Warehouse South is the primary closure candidate with 79,380 units (lowest inventory) stored across low-demand product lines
+- **Capacity Utilization**: Warehouse South operates at lowest percentage capacity; other facilities (North, East, West) have sufficient space to absorb redistribution
+- **Low-Revenue Product Lines**: Trains, Ships, Trucks and Buses (stored in South) are among the least profitable product lines in the catalog
+- **Redistribution Feasibility**: 79,380 units can be redistributed without exceeding 85% capacity limits in remaining warehouses
+
+### Inventory Performance
+
+- **Overstocked Products**: 1985 Toyota Supra (S18_3233) has 7,733 units in stock with 0 units sold—represents largest inventory holding without sales
+- **Slow-Moving Inventory**: Multiple products show inventory turnover ratios <1, indicating items not selling within standard holding periods
+- **Inventory Surplus**: Significant overstocking identified across multiple product lines; surplus items represent tied-up capital and storage costs
+- **Non-Moving Stock**: Analysis identified products with zero sales; candidates for promotional clearance or discontinuation
+
+### Revenue & Profitability
+
+- **Product Line Revenue Disparity**: Classic Cars and Motorcycles generate significantly higher revenue than Trains, Ships, and Trucks/Buses despite similar inventory levels
+- **High-Performing Products**: Top 10 revenue-generating products should be prioritized for restocking and marketing
+- **Underperforming Products**: Bottom 10 products generate minimal revenue; strong candidates for discontinuation or deep discounting
+
+### Seasonal Patterns
+
+- **Warehouse South Seasonality**: Trains, Ships, and Trucks/Buses show clear seasonal demand variations—closure should be timed during low-demand periods
+- **Predictable Demand**: Seasonal trends enable optimal timing for warehouse transition to minimize disruption
 
 ## Database Schema
 
-- **Products**: 110 classic car and collectible items with pricing and reorder info
-- **Orders & OrderDetails**: Transaction history with 326 orders from 98 customers
-- **Customers**: Geographic distribution and credit information
-- **Warehouses**: 4 facilities (North, South, East, West) with capacity and stock levels
-- **Inventory**: Stock quantities and warehouse assignments
+- **Products Table**: 110 classic car and collectible items with productCode, productName, quantityInStock, warehouseCode, priceEach, reorderLevel
+- **Orders Table**: 326 total orders with orderNumber, orderDate, requiredDate, shippedDate, status, customerNumber
+- **OrderDetails Table**: Line-item transaction history with orderNumber, productCode, quantityOrdered, priceEach
+- **Customers Table**: 98 customer records with geography, credit information, customer ID
+- **Warehouses Table**: 4 facilities (North, South, East, West) with warehouseCode, warehouseName, warehosePctCap (capacity percentage)
+- **Relationships**: Products linked to Warehouses via warehouseCode; Orders linked to OrderDetails via orderNumber
 
 ## How to Reproduce
 
@@ -108,10 +129,32 @@ mysql -u [username] -p < mintclassics_schema.sql
 
 ## Strategic Recommendations
 
-1. **Close Warehouse South** - Consolidate operations to North and East facilities
-2. **Product Portfolio Review** - Consider discontinuing or repositioning slow-moving items
-3. **Inventory Optimization** - Implement just-in-time ordering for high-turnover products
-4. **Regional Focus** - Increase marketing in high-order regions (North America, Europe)
+### 1. Close Warehouse South (Primary Action)
+
+- Consolidate 79,380 units to Warehouses North, East, and West
+- Time closure during identified low-demand period based on seasonal analysis
+- Execute in phases to maintain operations during transition
+- Expected cost savings from reduced facility overhead and labor
+
+### 2. Optimize Inventory Levels
+
+- **Reduce Overstocking**: Launch promotional campaigns to clear excess inventory (e.g., 1985 Toyota Supra with 7,733 units, 0 sales)
+- **Address Understocking**: Increase stock for high-demand products to avoid stockouts and capture lost sales
+- **Implement Just-in-Time**: For high-turnover products, shift to more frequent smaller orders
+- **Discontinue Non-Movers**: Evaluate bottom 10 revenue-generating products for discontinuation
+
+### 3. Product Portfolio Optimization
+
+- **Prioritize High-Performers**: Focus marketing and restocking on top 10 revenue-generating products
+- **Phase Out Low-Margin Items**: Trains and Ships generate significantly lower revenue; consider discontinuation
+- **Improve Motorcycle & Cars Focus**: These categories drive majority of revenue; allocate more inventory and marketing resources
+- **Clear Slow-Moving Inventory**: Run promotions on products with inventory turnover ratios <1
+
+### 4. Demand Forecasting
+
+- **Seasonal Planning**: Use identified seasonal patterns to optimize stock levels by quarter
+- **Predictive Analytics**: Implement forecasting models to predict demand and reduce excess inventory
+- **Monitor Turnover**: Continuously track inventory turnover ratios to identify emerging slow-movers early
 
 ## Files Reference
 
@@ -129,5 +172,5 @@ January 2025
 
 ## Links
 
-- 📄 [Full Report](../../documents/reports/mint_classics_eda_report.pdf)
+- 📄 [Full Report](./reports/mint_classics_eda_report.pdf)
 - 💻 [SQL Queries](https://github.com/zachrodrigue/zachrodrigue.github.io/blob/main/documents/scripts/mint-classics/eda_script.sql)

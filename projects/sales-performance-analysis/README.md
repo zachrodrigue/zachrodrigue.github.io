@@ -35,49 +35,62 @@ Conduct comprehensive sales analysis to understand performance drivers, identify
 
 ```text
 sales-performance-analysis/
-├── dashboards/
-│   ├── sales_performance_dashboard.xlsx  # Main Excel workbook with dashboard
-│   ├── data_clean.xlsx                   # Cleaned data for analysis
-│   └── dashboard_screenshot.png          # Preview image
 ├── data/                                  # Source data
-│   ├── raw_sales_data.csv
-│   ├── regional_data.csv
-│   ├── product_categories.csv
-│   └── README.md                         # Data documentation
-├── plots/                                 # Chart exports
-│   ├── kpi_metrics.png
-│   ├── monthly_revenue.png
-│   ├── regional_sales.png
-│   ├── sales_trends.png
-│   └── performance_summary.png
+│   └── sales_data.csv                    # Raw sales transactions (2023-2024)
+├── plots/                                 # Chart exports and visualizations
+├── reports/                               # Analysis reports and findings
+├── requirements.txt                       # Project dependencies
 └── README.md                             # This file
 ```
 
 ## Key Metrics Analyzed
 
-### Sales Performance
+### Sales Performance (2023 vs 2024)
 
-- **Total Sales**: Overall revenue performance
-- **Monthly Revenue**: Trend analysis over time
-- **Regional Sales**: Performance by geographic area
-- **Growth Rate**: Period-over-period comparison
-- **Profit Margins**: Profitability analysis
+- **Total Sales Growth**: 30% increase from 2023 to 2024
+- **Profit Margin Growth**: 34% increase in profit margins in 2024
+- **Regional Performance**: South region highest growth; East region second-highest
+- **Product Performance**: Monitor and Mouse showed dramatic turnaround; Keyboard declined
+- **Seasonal Patterns**: Q2 2024 showed initial decline followed by strong recovery
 
-### Key Performance Indicators (KPIs)
+### Top Performing Products
 
-- **Sales Target Achievement**: Performance vs. goals
-- **Customer Acquisition**: New customer metrics
-- **Average Transaction Value**: Revenue per sale
-- **Regional Market Share**: Performance distribution
-- **Seasonal Patterns**: Trend identification
+**2024 Top 3**: Monitor ($109K), Mouse ($106K), Keyboard
+**2023 Top 3**: Keyboard, Headphones, Laptop
+
+### Key Performance Indicators
+
+- **Monitor**: Dramatic turnaround from $37K (2023) → $109K (2024) (+194% growth)
+- **Mouse**: Dramatic turnaround from $42K (2023) → $106K (2024) (+152% growth)
+- **Laptop**: Consistent performance across both years (stable demand)
+- **Keyboard**: Declined in 2024, indicating market saturation or increased competition
+- **Headphones**: Performance data tracked across periods
 
 ## Key Findings Summary
 
-- **Top Regions**: [Specific regions] driving [X]% of sales
-- **Growth Leaders**: [Regions/products] with highest growth rates
-- **Performance Factors**: [Key drivers] identified as sales influencers
-- **Improvement Opportunities**: [Areas] for optimization and growth
-- **Seasonal Trends**: [Patterns] impacting sales planning
+### Growth & Profitability
+
+- **Overall Sales Growth**: 30% increase in total sales from 2023 to 2024
+- **Profit Margin Expansion**: 34% increase in profit margins, driven by strong sales and product mix optimization
+- **Revenue Acceleration**: Year-over-year comparison shows consistent positive momentum
+
+### Regional Performance
+
+- **South Region**: Highest growth leader with strongest YoY improvement
+- **East Region**: Second-highest growth contributor
+- **Other Regions**: Steady but lower growth rates; opportunities for optimization
+
+### Product Performance Dynamics
+
+- **Monitor & Mouse Transformation**: Dramatically underperformed in 2023 ($37K, $42K) but became top 2 products in 2024 ($109K, $106K)
+- **Keyboard Decline**: Top performer in 2023 but declined in 2024; market saturation or competition concern
+- **Laptop Consistency**: Maintained stable demand across both years; reliable revenue contributor
+- **Strategic Shift**: Clear market preference shift toward peripherals (Monitor, Mouse) in 2024
+
+### Seasonal Trends
+
+- **Q2 2024 Pattern**: Initial sales decline followed by strong recovery suggests seasonal opportunity
+- **Trend Continuation**: Positive momentum continuing through analysis period
 
 ## Dashboard Components
 
@@ -141,10 +154,11 @@ Data → Refresh All
 ## Data Source & Size
 
 - **Source**: Sales Performance Database (Case Study)
-- **Time Period**: [Specify date range]
-- **Records**: ~[number] transactions
-- **Geographic Coverage**: [Coverage area]
-- **Product Categories**: [Number of categories]
+- **Time Period**: 2023 and 2024 (24-month analysis)
+- **Records**: Multiple sales transactions across regions and product categories
+- **Geographic Coverage**: Multiple regions (South, East, and other areas)
+- **Product Categories**: 5+ product lines (Monitor, Mouse, Keyboard, Headphones, Laptop, and others)
+- **Dimensions**: Regional, temporal (monthly/quarterly), and product-level analysis
 
 ## Methodology
 
@@ -157,33 +171,39 @@ Data → Refresh All
 
 ## Strategic Recommendations
 
-### 1. Sales Strategy
+### 1. Capitalize on Monitor & Mouse Momentum
 
-- Focus efforts on highest-performing regions
-- Implement best practices from top performers in underperforming areas
-- Develop region-specific strategies based on performance data
-- Allocate resources to growth-opportunity markets
+- **Double Marketing Investment**: Monitor and Mouse showed 194% and 152% growth respectively
+- **Increase Inventory**: Scale up production/stock for these high-demand products
+- **Analyze Success Factors**: Investigate and replicate the marketing/sales strategies that drove their turnaround
+- **Bundle Strategy**: Create product bundles combining Monitor/Mouse with complementary items
 
-### 2. Performance Management
+### 2. Address Keyboard Market Decline
 
-- Set region-specific targets based on market potential
-- Implement KPI tracking and dashboards
-- Create accountability for performance metrics
-- Establish regular review cycles
+- **Strategic Assessment**: Keyboard declined from top performer (2023) to lower position (2024)
+- **Innovation Analysis**: Assess if competition improved or market preferences shifted
+- **Promotional Campaign**: Consider bundle deals or discounts to regain market share
+- **Product Upgrade**: Evaluate keyboard product features and quality vs. competitors
 
-### 3. Process Optimization
+### 3. Leverage South & East Region Growth
 
-- Analyze factors in high-performing regions for replication
-- Identify bottlenecks in underperforming regions
-- Optimize sales processes based on data insights
-- Implement performance improvement initiatives
+- **South Region Focus**: Maintain momentum in highest-growth region with increased marketing/sales resources
+- **East Region Expansion**: Build on second-highest growth with targeted expansion efforts
+- **Regional Customization**: Develop region-specific product bundles and pricing strategies
+- **Market Share Expansion**: Invest in underperforming regions using South/East playbook
 
-### 4. Growth Initiatives
+### 4. Optimize Seasonal Planning
 
-- Target expansion in high-potential regions
-- Develop marketing campaigns for identified opportunities
-- Optimize product mix based on regional preferences
-- Implement seasonal strategies based on trends
+- **Q2 Strategy**: Anticipate Q2 initial decline and plan mitigation strategies (promotions, new product launches)
+- **Recovery Capitalization**: Leverage Q2 recovery momentum for accelerated Q3-Q4 growth
+- **Inventory Planning**: Adjust stock levels based on seasonal patterns to minimize stockouts/overstock
+- **Campaign Timing**: Schedule major marketing initiatives to counter seasonal dips
+
+### 5. Maintain Laptop Consistency
+
+- **Stable Growth Base**: Laptop's consistent performance across years provides reliable revenue foundation
+- **Bundle Integration**: Use laptop's steady demand as anchor for bundling with growing products (Monitor, Mouse)
+- **Market Expansion**: Explore new segments or configurations to grow this stable product line
 
 ## Excel Skills Demonstrated
 
@@ -207,4 +227,4 @@ June 2025
 ## Links
 
 - 📊 [Interactive Dashboard](https://1drv.ms/x/c/67671d55fee3b341/EaiyR5FXZrlNiWQ7eH2IKiMBH7tWman6gIlu_Nsj3rd_AA)
-- 📄 [Full Report](../../documents/reports/sales_performance_report.pdf)
+- 📄 [Full Report](./reports/sales_performance_report.pdf)

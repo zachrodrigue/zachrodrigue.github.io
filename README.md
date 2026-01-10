@@ -26,7 +26,7 @@ Exploratory data analysis on fitness tracking data to identify user behavior pat
 **Key Findings:** Identified three distinct user segments based on activity levels; discovered correlation between activity and sleep patterns; recommended personalized marketing strategies based on peak usage times.
 
 **Deliverables:** R Markdown analysis | 3+ visualizations | Strategic recommendations  
-🔗 [View Repository](./projects/bellabeat-analysis/) | [Kaggle Notebook](https://www.kaggle.com/code/rodriguedeguenon/capstone-project-bellabeat) | [Report PDF](./documents/reports/bellabeat-report.pdf)
+🔗 [View Repository](./projects/bellabeat-analysis/) | [Kaggle Notebook](https://www.kaggle.com/code/rodriguedeguenon/capstone-project-bellabeat) | [Report PDF](./projects/bellabeat-analysis/reports/bellabeat-report.pdf)
 
 ---
 
@@ -37,7 +37,7 @@ Analyzed 12+ months of bike-sharing data to identify behavioral differences betw
 **Key Findings:** Casual riders take 3x longer trips; Members use bikes consistently weekdays; Different seasonal patterns between segments; Identified incentive opportunities.
 
 **Deliverables:** R analysis | Tableau dashboard | 15+ visualizations | Strategic recommendations  
-🔗 [View Repository](./projects/cyclistic-analysis/) | [Tableau Dashboard](https://public.tableau.com/app/profile/rodrigue.deguenon/viz/CyclisticBikeShareAnalysis_17374684424790/Dashboard1) | [Report PDF](./documents/reports/cyclistic_report.pdf)
+🔗 [View Repository](./projects/cyclistic-analysis/) | [Tableau Dashboard](https://public.tableau.com/app/profile/rodrigue.deguenon/viz/CyclisticBikeShareAnalysis_17374684424790/Dashboard1) | [Report PDF](./projects/cyclistic-analysis/reports/cyclistic_report.pdf)
 
 ---
 
@@ -50,7 +50,7 @@ Designed and analyzed a relational database for classic car retailer inventory, 
 **Key Achievements:** Identified Warehouse South closure candidate; Planned redistribution of 79,380 units; Found slow-moving products; Provided cost optimization recommendations.
 
 **Deliverables:** SQL queries (25+) | Database schema & ERD | Analysis results | Business recommendations  
-🔗 [View Repository](./projects/mint-classics-analysis/) | [SQL Scripts](./documents/scripts/mint-classics/eda_script.sql) | [Report PDF](./documents/reports/mint_classics_eda_report.pdf)
+🔗 [View Repository](./projects/mint-classics-analysis/) | [SQL Scripts](./documents/scripts/mint-classics/eda_script.sql) | [Report PDF](./projects/mint-classics-analysis/reports/mint_classics_eda_report.pdf)
 
 ---
 
@@ -61,7 +61,7 @@ Built comprehensive database for educational institution supporting enrollment m
 **Key Achievements:** Designed 3NF schema for students, courses, and enrollments; Developed 15+ analytical queries; Identified enrollment trends; Generated insights for curriculum planning.
 
 **Deliverables:** Database schema & EER diagram | SQL queries | Analysis results | Operational recommendations  
-🔗 [View Repository](./projects/wittig-school-analysis/) | [Database Doc](./documents/reports/wittig_sms_doc.pdf) | [Report PDF](./documents/reports/Wittig_School_Project_Report.pdf)
+🔗 [View Repository](./projects/wittig-school-analysis/) | [Database Doc](./projects/wittig-school-analysis/reports/wittig_sms_doc.pdf) | [Report PDF](./projects/wittig-school-analysis/reports/Wittig_School_Project_Report.pdf)
 
 ---
 
@@ -74,7 +74,7 @@ Interactive dashboard for hotel revenue and booking analysis with advanced KPI t
 **Key Metrics:** Gross/Net Revenue | Booking trends | Cancellation impact | Occupancy rates | Lost revenue analysis
 
 **Deliverables:** 2-page Power BI dashboard | 20+ DAX measures | Interactive KPIs | Executive summary  
-🔗 [View Repository](./projects/hotel-dashboard-analysis/) | [Live Dashboard](https://app.powerbi.com/view?r=eyJrIjoiOWVhZTEwYTYtNmUzOS00MzcxLTkxMWQtODNlYWZjNGZmODYxIiwidCI6IjU5N2NlOTZmLWY2NzgtNDQ4YS1hNmE0LTAyZGJmYTUyMGQyYyJ9&embedImagePlaceholder=true) | [Report PDF](./documents/reports/hotel_dashboard_report.pdf)
+🔗 [View Repository](./projects/hotel-dashboard-analysis/) | [Live Dashboard](https://app.powerbi.com/view?r=eyJrIjoiOWVhZTEwYTYtNmUzOS00MzcxLTkxMWQtODNlYWZjNGZmODYxIiwidCI6IjU5N2NlOTZmLWY2NzgtNDQ4YS1hNmE0LTAyZGJmYTUyMGQyYyJ9&embedImagePlaceholder=true) | [Report PDF](./projects/hotel-dashboard-analysis/reports/hotel_dashboard_report.pdf)
 
 ---
 
@@ -85,7 +85,7 @@ Interactive Power BI dashboard analyzing chocolate sales trends, product perform
 **Key Insights:** Top product categories | Channel performance comparison | Seasonal patterns | Sales optimization opportunities
 
 **Deliverables:** 2-page Power BI dashboard | DAX measures | Interactive charts | Recommendations  
-🔗 [View Repository](./projects/chocolate-sales-analysis/) | [Live Dashboard](https://app.powerbi.com/view?r=eyJrIjoiOGE4NWViYjgtZjMzYS00MzlkLWJmNGUtYjM3YmMxMGVmMzI5IiwidCI6IjU5N2NlOTZmLWY2NzgtNDQ4YS1hNmE0LTAyZGJmYTUyMGQyYyJ9) | [Report PDF](./documents/reports/chocolate-sales-report.pdf)
+🔗 [View Repository](./projects/chocolate-sales-analysis/) | [Live Dashboard](https://app.powerbi.com/view?r=eyJrIjoiOGE4NWViYjgtZjMzYS00MzlkLWJmNGUtYjM3YmMxMGVmMzI5IiwidCI6IjU5N2NlOTZmLWY2NzgtNDQ4YS1hNmE0LTAyZGJmYTUyMGQyYyJ9) | [Report PDF](./projects/chocolate-sales-analysis/reports/chocolate-sales-report.pdf)
 
 ---
 
@@ -98,7 +98,7 @@ Comprehensive sales analysis with interactive Excel dashboard using Power Query 
 **Key Findings:** Top products and regions | Seasonal sales patterns | Shipping mode impact | Regional profitability | Customer segmentation
 
 **Deliverables:** Interactive Excel dashboard | Power Query transformations | Pivot tables & charts | Actionable insights  
-🔗 [View Repository](./projects/furniture-sales-analysis/) | [Excel Dashboard](https://1drv.ms/x/c/67671d55fee3b341/ERE_h7DobQdOuV233ME37EYB1QpP0gYoMQqjqmyLswiblw) | [Report PDF](./documents/reports/Furniture%20Sales%20Analysis%20Report.pdf)
+🔗 [View Repository](./projects/furniture-sales-analysis/) | [Excel Dashboard](https://1drv.ms/x/c/67671d55fee3b341/ERE_h7DobQdOuV233ME37EYB1QpP0gYoMQqjqmyLswiblw) | [Report PDF](./projects/furniture-sales-analysis/reports/Furniture%20Sales%20Analysis%20Report.pdf)
 
 ---
 
@@ -109,7 +109,7 @@ Multi-dimensional sales performance dashboard with regional analysis, KPI tracki
 **Key Metrics:** Monthly revenue trends | Regional performance | Sales vs. targets | Growth rates | Performance factors
 
 **Deliverables:** Interactive Excel dashboard | Multiple pivot tables | Executive summary | Strategic recommendations  
-🔗 [View Repository](./projects/sales-performance-analysis/) | [Excel Dashboard](https://1drv.ms/x/c/67671d55fee3b341/EaiyR5FXZrlNiWQ7eH2IKiMBH7tWman6gIlu_Nsj3rd_AA) | [Report PDF](./documents/reports/sales_performance_report.pdf)
+🔗 [View Repository](./projects/sales-performance-analysis/) | [Excel Dashboard](https://1drv.ms/x/c/67671d55fee3b341/EaiyR5FXZrlNiWQ7eH2IKiMBH7tWman6gIlu_Nsj3rd_AA) | [Report PDF](./projects/sales-performance-analysis/reports/sales_performance_report.pdf)
 
 ---
 

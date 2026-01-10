@@ -33,51 +33,62 @@ Create comprehensive dashboards and analyses to track hotel KPIs (Key Performanc
 
 ```text
 hotel-dashboard-analysis/
-├── dashboard_files/
-│   ├── hotel_dashboard.pbix           # Power BI project file
-│   ├── data_model_diagram.png
-│   └── dashboard_preview.png
+├── data/
+│   ├── Datatable.txt                 # Raw booking data (92,000 rows)
+│   └── hotel_reservations_data_dictionary.csv  # Data documentation
 ├── Dax_Measures/                       # DAX measure definitions
 │   ├── bookingsboard.dax              # Booking-related measures
 │   ├── calendar.dax                   # Date/time calculations
 │   ├── grossrevenue.dax               # Revenue before adjustments
 │   ├── netrevenue.dax                 # Final revenue calculations
 │   └── lostrevenue.dax                # Revenue loss analysis
-├── data/                               # Source data
-│   ├── bookings_data.csv
-│   ├── calendar_dimension.csv
-│   └── README.md                      # Data documentation
-├── plots/                              # Dashboard screenshots
-│   ├── revenue_dashboard.png
-│   ├── bookings_analysis.png
-│   └── kpi_summary.png
-└── README.md                          # This file
+├── plots/                              # Dashboard screenshots and exports
+├── reports/                            # Analysis reports
+└── README.md                           # This file
 ```
 
 ## Key Metrics Tracked
 
-### Primary KPIs
+### Primary KPIs (2024 Data)
 
-- **Gross Revenue**: Total revenue before deductions ($)
-- **Net Revenue**: Final revenue after cancellations and adjustments ($)
-- **Bookings**: Total number of reservations (#)
-- **Lost Revenue**: Estimated revenue from cancellations ($)
-- **Occupancy Rate**: Percentage of available rooms booked (%)
+- **Gross Revenue**: $102.7M total revenue before cancellations
+- **Net Revenue**: $80.01M revenue after cancellations (78% net rate)
+- **Lost Revenue**: $22.69M (22.1% of gross revenue)
+- **Total Bookings**: 38,000 reservations
+- **Cancellations**: 9,000 cancelled bookings (23.7% cancellation rate)
 
 ### Secondary Metrics
 
-- **Average Daily Rate (ADR)**: Average revenue per occupied room
-- **Cancellation Rate**: Percentage of bookings cancelled
-- **Revenue per Available Room (RevPAR)**: Revenue optimization metric
-- **Booking Trends**: Month-over-month and year-over-year comparisons
+- **Lost Revenue Reduction**: 63% improvement YoY (from $61.29M to $22.69M)
+- **Revenue Recovery Rate**: 13.1% increase in net revenue despite lower bookings
+- **Top Revenue Method**: Cash payments (63.8% net rate); slight advantage over cards
+- **Seasonal Variation**: Summer (7,000 cancellations) to Autumn (10,000 cancellations)
+- **Geographic Performance**: 65.7% net rate in Egypt; 37.9% lost rate in Greece
 
 ## Key Findings Summary
 
-- **Revenue Patterns**: Peak revenue in [specific months], decline during [seasons]
-- **Booking Behavior**: [X]% of bookings made [timeframe] in advance
-- **Cancellation Impact**: [X]% cancellation rate results in $[amount] lost revenue
-- **Property Performance**: [Top/Bottom] performing properties identified for targeted strategies
-- **Seasonal Trends**: Clear seasonal patterns with [X]% variance between peak/off-season
+### Revenue Performance: Strong Recovery
+
+- **2023**: Gross Revenue $131.99M, Lost Revenue $61.29M (46.4%), Net Revenue $70.7M
+- **2024**: Gross Revenue $102.7M, Lost Revenue $22.69M (22.1%), Net Revenue $80.01M
+- **Year-over-Year Improvement**: Lost Revenue decreased 63% YoY; Net Revenue grew 13.1% despite lower gross revenue
+- **Payment Method Performance**: Cash (63.8% net rate), Bank Transfer (63.6%), Credit Card (63.5%)
+- **Geographic Leaders**: Egypt highest net revenue rate (65.7%), Greece highest lost revenue (37.9%)
+
+### Booking Trends: Volume Down, Efficiency Up
+
+- **Total Bookings**: 49,000 (2023) → 38,000 (2024), 22.5% decrease
+- **Cancellations**: 24,000 (2023) → 9,000 (2024), 62.5% improvement
+- **Peak Check-in Months**: June (5,312 check-ins), July (5,613 check-ins) — summer travel season
+- **Peak Cancellation Months**: December (3,502), November (3,425) — holiday season challenges
+- **Cancellations by Season**: Autumn (10,000), Spring (9,000), Winter (8,000), Summer (7,000)
+
+### Strategic Insights
+
+- Operational improvements significantly reduced lost revenue despite lower booking volume
+- Booking channels show nearly equal net/lost revenue, indicating friction in conversion process
+- Q4 cancellations represent opportunity for targeted retention strategies and seasonal offers
+- Geographic patterns suggest market-specific booking challenges requiring regional analysis
 
 ## Dashboard Pages
 
@@ -147,10 +158,11 @@ Useful for time-based analysis and comparisons
 
 ## Data Source & Size
 
-- **Source**: Hotel operational database (Open Heaven Hotels case study)
-- **Time Period**: [Specify date range]
-- **Records**: ~[number] bookings analyzed
-- **Tables**: Bookings, Customers, Rooms, Dates, Properties
+- **Source**: Open Heaven Hotels sample reservations data (Data with Decision)
+- **Time Period**: 2023 & 2024 (24 months of operations)
+- **Records**: 92,000 total booking transactions analyzed
+- **Features**: 24 columns including: BookingDate, CheckinDate, CheckoutDate, Status, RoomType, Payment Method, Nationality, BookingChannel, RoomRate, NumberOfNights
+- **Data Quality**: Cleaned and standardized using Power Query; duplicates removed, data types validated
 
 ## Methodology
 
@@ -162,10 +174,33 @@ Useful for time-based analysis and comparisons
 
 ## Strategic Recommendations
 
-1. **Optimize Pricing**: Adjust rates based on demand patterns to increase revenue
-2. **Reduce Cancellations**: Implement deposit/penalty strategies for high-cancellation periods
-3. **Enhance Marketing**: Target marketing campaigns during low-occupancy periods
-4. **Operational Efficiency**: Align staffing with predicted occupancy from forecasts
+### 1. Reduce Cancellations in Q4 (Top Priority)
+
+- November-December see peak cancellations (6,927 combined)
+- Implement deposit/penalty structures or incentive programs for high-risk periods
+- Send reminder communications 48-72 hours before check-in
+- Consider non-refundable rate options with 10-15% discount
+
+### 2. Address Regional Booking Friction
+
+- Greece shows 37.9% lost revenue rate — investigate booking process barriers
+- Equal net/lost revenue across channels suggests conversion issues
+- A/B test simplified booking flows and expanded payment options by geography
+- Prioritize high-loss channels for process optimization
+
+### 3. Maximize Summer Peak Season (June-July)
+
+- June (5,312) and July (5,613) check-ins represent peak demand
+- Increase rates 15-20% during these months to capture demand
+- Allocate marketing budget to drive bookings 6-8 weeks in advance
+- Cross-sell premium room types and add-on services during peak season
+
+### 4. Boost Off-Season Revenue (February-May)
+
+- Implement targeted promotional campaigns during shoulder months
+- Use dynamic pricing to stimulate bookings when occupancy is low
+- Create package deals combining rooms with experiences or services
+- Focus marketing efforts on low-performing regions during these periods
 
 ## Author
 
@@ -178,4 +213,4 @@ July 2025
 ## Links
 
 - 📊 [Interactive Dashboard](https://app.powerbi.com/view?r=eyJrIjoiOWVhZTEwYTYtNmUzOS00MzcxLTkxMWQtODNlYWZjNGZmODYxIiwidCI6IjU5N2NlOTZmLWY2NzgtNDQ4YS1hNmE0LTAyZGJmYTUyMGQyYyJ9&embedImagePlaceholder=true)
-- 📄 [Full Report](../../documents/reports/hotel_dashboard_report.pdf)
+- 📄 [Full Report](./reports/hotel_dashboard_report.pdf)

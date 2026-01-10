@@ -18,10 +18,10 @@ Conduct comprehensive sales analysis to understand performance drivers, identify
 
 ## Key Achievements
 
-- ✅ Developed interactive Excel dashboard to visualize sales performance across dimensions
-- ✅ Identified key performance factors driving sales and customer engagement
-- ✅ Provided actionable recommendations to optimize sales, profit, and operations
-- ✅ Created dynamic reports using Power Query and pivot tables for stakeholder analysis
+- Developed interactive Excel dashboard to visualize sales performance across dimensions
+- Identified key performance factors driving sales and customer engagement
+- Provided actionable recommendations to optimize sales, profit, and operations
+- Created dynamic reports using Power Query and pivot tables for stakeholder analysis
 
 ## Technologies Used
 
@@ -35,22 +35,11 @@ Conduct comprehensive sales analysis to understand performance drivers, identify
 
 ```text
 furniture-sales-analysis/
-├── dashboards/
-│   ├── furniture_sales_dashboard.xlsx   # Main Excel workbook with dashboard
-│   ├── data_clean.xlsx                  # Cleaned data for analysis
-│   └── dashboard_screenshot.png         # Preview image
-├── data/                                 # Source data
-│   ├── raw_sales_data.csv
-│   ├── product_categories.csv
-│   ├── geographic_data.csv
-│   └── README.md                        # Data documentation
-├── plots/                                # Chart exports
-│   ├── sales_by_category.png
-│   ├── regional_performance.png
-│   ├── monthly_trends.png
-│   ├── shipping_analysis.png
-│   ├── top_cities_chart.png
-│   └── profitability_matrix.png
+├── data/
+│   └── Furniture_Sales.csv              # Raw sales transaction data (2014-2017)
+├── plots/                                # Chart exports and visualizations
+├── reports/                              # Analysis reports and findings
+├── requirements.txt                      # Python dependencies (if applicable)
 └── README.md                            # This file
 ```
 
@@ -58,39 +47,40 @@ furniture-sales-analysis/
 
 ### Sales Performance
 
-- **Total Sales**: [X] across [Y] transactions
-- **Average Order Value (AOV)**: [X]
-- **Top Product Category**: [Category] with [X]% of total sales
-- **Regional Leaders**: [City/Region] with [X]% market share
+- **Total Sales (2014–2017)**: $741,999.80 across ~2,122 transactions
+- **Total Profit**: $18,451.27 (2.5% profit margin)
+- **Year-over-Year Growth**: 45% decline in 2015, 131% growth in 2016, 57% decline in 2017
+- **Top Product Category**: Chairs with $328.4K in sales (44% of furniture category)
+- **Regional Leader**: West region with $252.6K (34% of total sales)
 
 ### Geographic Analysis
 
-- **Top Cities**: [Specific cities] driving [X]% of sales
-- **Regional Distribution**: [Breakdown by geography]
-- **Growth Markets**: [Emerging regions] with [X]% growth
-- **Underperforming Areas**: [Regions] requiring attention
+- **Top 5 Cities**: New York City ($75.7K), Los Angeles ($54.0K), Seattle ($41.0K), Philadelphia ($36.5K), San Francisco ($36.4K)
+- **Regional Distribution**: West ($252.6K, 34%), East ($208.3K, 28%), Central ($163.8K, 22%), South ($117.3K, 16%)
+- **Highest Sales State**: California with $156.1K in revenue
+- **Underperforming Areas**: South region with lowest regional sales; Montana with minimal market penetration ($64 total)
 
 ### Product Performance
 
-- **Best Sellers**: [Products] with [X] units sold
-- **Profit Leaders**: [Products] generating highest margins
-- **Slow-Moving Inventory**: [Products] with [inventory turnover]
-- **Category Performance**: [Breakdown by furniture type]
+- **Top Sub-Categories by Sales**: Chairs ($328.4K), Tables ($207.0K), Bookcases ($114.9K)
+- **Lowest Performing Sub-Category**: Furnishings with $91.7K in sales (consider promotional focus or discontinuation)
+- **Best Performers**: Chairs dominate with 44% of total furniture sales
+- **Category Performance**: Wide variance across furniture types; chairs show consistent strong performance while furnishings lag
 
 ### Operational Metrics
 
-- **Shipping Methods**: [Breakdown of Standard/Express/Same Day]
-- **Cost Analysis**: Shipping costs as [X]% of revenue
-- **Customer Segmentation**: [Consumer vs. Corporate breakdown]
-- **Payment Terms**: Analysis of payment methods and terms
+- **Shipping Methods**: Standard Class dominates with 59% of shipments
+- **Average Shipment Duration**: 4 days overall; Standard Class (5 days), Same-Day delivery (0 days)
+- **Delivery Efficiency**: Same-Day shipping available but underutilized; Standard Class most cost-effective
+- **Peak Shipping Periods**: December shows highest shipment volume; February shows lowest activity
 
 ## Key Findings Summary
 
-- **Seasonal Patterns**: Strong peaks in [seasons] with [X]% variance
-- **Shipping Impact**: Faster shipping correlates with [X]% higher order values
-- **Regional Opportunity**: [Region] underutilized with [X]% growth potential
-- **Product Mix**: [Category] high volume but lower margin; [Category] low volume but high margin
-- **Customer Behavior**: [Specific behavioral insights]
+- **Seasonal Patterns**: Strong peak in December (holiday shopping); weakness in February with 58% lower sales than December
+- **Volatile Growth**: Significant fluctuations in YoY performance (131% growth in 2016 followed by 57% decline in 2017) indicate market volatility or operational challenges
+- **Regional Disparity**: West and East regions drive 62% of total sales; South region significantly underperforms with only 16% market share
+- **Product Mix**: Chairs dominate sales but furnishings underperform; suggests opportunity to reallocate resources or improve furnishings marketing
+- **Profit Margin Challenges**: Despite $742K in sales, profit of only $18.5K (2.5% margin) indicates pricing or cost pressures
 
 ## Dashboard Components
 
@@ -161,11 +151,11 @@ Data → Refresh All
 
 ## Data Source & Size
 
-- **Source**: Furniture Sales Database (Case Study)
-- **Time Period**: [Specify date range]
-- **Records**: ~[number] transactions
-- **Features**: 15+ attributes per transaction
-- **Geographic Scope**: [Coverage area]
+- **Source**: Furniture Sales Database curated by Freedom Oboh
+- **Time Period**: 2014–2017 (4 years of sales history)
+- **Records**: ~2,122 transactions across all regions and categories
+- **Features**: 20 attributes per transaction including Order Date, Ship Date, Sales, Profit, Region, Segment, Product Category, Sub-Category, Quantity, Shipping Mode
+- **Geographic Scope**: United States (4 regions, 49 states, 500+ cities)
 
 ## Methodology
 
@@ -228,4 +218,4 @@ June 2025
 ## Links
 
 - 📊 [Interactive Dashboard](https://1drv.ms/x/c/67671d55fee3b341/ERE_h7DobQdOuV233ME37EYB1QpP0gYoMQqjqmyLswiblw)
-- 📄 [Full Report](../../documents/reports/Furniture%20Sales%20Analysis%20Report.pdf)
+- 📄 [Full Report](./reports/Furniture%20Sales%20Analysis%20Report.pdf)
