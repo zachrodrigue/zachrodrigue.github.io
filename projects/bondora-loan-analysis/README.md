@@ -55,7 +55,7 @@ bondora-loan-analysis/
 
 ## Notebook Structure
 
-The `loan_analysis.ipynb` is organized into five comprehensive parts:
+The `bondora_loan_analysis.ipynb` is organized into five comprehensive parts:
 
 ### Part 1: Setup and Data Loading
 
@@ -161,7 +161,7 @@ cd bondora-loan-analysis
 # Start Jupyter
 jupyter notebook
 
-# Open loan_analysis.ipynb
+# Open bonodora_loan_analysis.ipynb
 # Run cells sequentially (Shift + Enter) or all at once (Cell → Run All)
 ```
 
