@@ -97,7 +97,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 'wittig-main',
                 'sales-performance-main',
                 'hotel-revenue-main',
-                'chocolate-sales-main', 
+                'chocolate-sales-main',
+                'bondora-main', 
             ].forEach(id => {
                 const el = document.getElementById(id);
                 if (el) lightGallery(el, { plugins: [lgZoom], speed: 400, selector: 'a' });
@@ -110,7 +111,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 'wittig-thumbs',
                 'sales-performance-thumbs',
                 'hotel-revenue-thumbs',
-                'chocolate-sales-thumbs', 
+                'chocolate-sales-thumbs',
+                'bondora-thumbs', 
             ].forEach(id => {
                 const el = document.getElementById(id);
                 if (el) lightGallery(el, { plugins: [lgZoom], speed: 400 });

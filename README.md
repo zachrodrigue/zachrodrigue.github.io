@@ -17,13 +17,37 @@ Each project is **self-contained, reproducible, and professionally documented** 
 
 ## 🎯 Featured Projects
 
+### **Business Intelligence & Dashboarding**
+
+#### [Hotel Revenue Dashboard](./projects/hotel-dashboard-analysis/) | **Power BI • DAX • Data Modeling**
+
+Interactive dashboard for hotel revenue and booking analysis with advanced KPI tracking and dynamic visualizations.
+
+**Key Metrics:** 92K transactions analyzed | Gross Revenue $102.7M | Net Revenue $80.01M | Lost Revenue $22.69M (22.1%) | 63% YoY lost revenue reduction
+
+**Deliverables:** 2-page Power BI dashboard | 20+ DAX measures | Interactive KPIs | Executive summary  
+🔗 [View Repository](./projects/hotel-dashboard-analysis/) | [Live Dashboard](https://app.powerbi.com/view?r=eyJrIjoiOWVhZTEwYTYtNmUzOS00MzcxLTkxMWQtODNlYWZjNGZmODYxIiwidCI6IjU5N2NlOTZmLWY2NzgtNDQ4YS1hNmE0LTAyZGJmYTUyMGQyYyJ9&embedImagePlaceholder=true) | [Report PDF](./projects/hotel-dashboard-analysis/reports/hotel_dashboard_report.pdf)
+
+---
+
+#### [Chocolate Sales Dashboard](./projects/chocolate-sales-analysis/) | **Power BI • DAX • Sales Analytics**
+
+Interactive Power BI dashboard analyzing chocolate sales trends, product performance, and distribution channels.
+
+**Key Insights:** $34M total sales | $20.5M profit | Top products: Organic Choco Syrup ($2.11M), Peanut Butter Cubes ($2.03M) | Channel performance analysis | Seasonal patterns
+
+**Deliverables:** 2-page Power BI dashboard | DAX measures | Interactive charts | Strategic recommendations  
+🔗 [View Repository](./projects/chocolate-sales-analysis/) | [Live Dashboard](https://app.powerbi.com/view?r=eyJrIjoiOGE4NWViYjgtZjMzYS00MzlkLWJmNGUtYjM3YmMxMGVmMzI5IiwidCI6IjU5N2NlOTZmLWY2NzgtNDQ4YS1hNmE0LTAyZGJmYTUyMGQyYyJ9) | [Report PDF](./projects/chocolate-sales-analysis/reports/chocolate-sales-report.pdf)
+
+---
+
 ### **R & Statistical Analysis**
 
 #### [Bellabeat Fitness Data Analysis](./projects/bellabeat-analysis/) | **R • ggplot2 • tidyverse**
 
 Exploratory data analysis on fitness tracking data to identify user behavior patterns and inform product strategy. Analyzed daily activity, sleep, and intensity metrics across user segments.
 
-**Key Findings:** Identified three distinct user segments based on activity levels; discovered correlation between activity and sleep patterns; recommended personalized marketing strategies based on peak usage times.
+**Key Findings:** 55% sleep compliance rate | Peak usage times 5-7 PM | Activity patterns correlate with sleep duration | Three distinct user segments identified | Recommendations for personalized engagement strategies.
 
 **Deliverables:** R Markdown analysis | 3+ visualizations | Strategic recommendations  
 🔗 [View Repository](./projects/bellabeat-analysis/) | [Kaggle Notebook](https://www.kaggle.com/code/rodriguedeguenon/capstone-project-bellabeat) | [Report PDF](./projects/bellabeat-analysis/reports/bellabeat-report.pdf)
@@ -32,9 +56,9 @@ Exploratory data analysis on fitness tracking data to identify user behavior pat
 
 #### [Cyclistic Bike Share Analysis](./projects/cyclistic-analysis/) | **R • Tableau • Data Visualization**
 
-Analyzed 12+ months of bike-sharing data to identify behavioral differences between casual riders and annual members, driving membership conversion strategy.
+Analyzed 5.7M+ bike trips to identify behavioral differences between casual riders and annual members, driving membership conversion strategy.
 
-**Key Findings:** Casual riders take 3x longer trips; Members use bikes consistently weekdays; Different seasonal patterns between segments; Identified incentive opportunities.
+**Key Findings:** 5.7M total trips analyzed | 64% annual members, 36% casual riders | Casual riders average 21.5 min trips, members average 12.4 min | Seasonal patterns differ by user type | Weekend preference for casual riders, weekday preference for members.
 
 **Deliverables:** R analysis | Tableau dashboard | 15+ visualizations | Strategic recommendations  
 🔗 [View Repository](./projects/cyclistic-analysis/) | [Tableau Dashboard](https://public.tableau.com/app/profile/rodrigue.deguenon/viz/CyclisticBikeShareAnalysis_17374684424790/Dashboard1) | [Report PDF](./projects/cyclistic-analysis/reports/cyclistic_report.pdf)
@@ -47,7 +71,7 @@ Analyzed 12+ months of bike-sharing data to identify behavioral differences betw
 
 Designed and analyzed a relational database for classic car retailer inventory, supporting strategic warehouse consolidation decision.
 
-**Key Achievements:** Identified Warehouse South closure candidate; Planned redistribution of 79,380 units; Found slow-moving products; Provided cost optimization recommendations.
+**Key Achievements:** Identified Warehouse South closure candidate | Planned redistribution of 79,380 units | Found slow-moving products (Trains, Ships, Trucks/Buses) | Located major overstocking (1985 Toyota Supra: 7,733 units, 0 sales) | Cost optimization recommendations.
 
 **Deliverables:** SQL queries (25+) | Database schema & ERD | Analysis results | Business recommendations  
 🔗 [View Repository](./projects/mint-classics-analysis/) | [SQL Scripts](./documents/scripts/mint-classics/eda_script.sql) | [Report PDF](./projects/mint-classics-analysis/reports/mint_classics_eda_report.pdf)
@@ -58,34 +82,10 @@ Designed and analyzed a relational database for classic car retailer inventory, 
 
 Built comprehensive database for educational institution supporting enrollment management, course planning, and resource allocation.
 
-**Key Achievements:** Designed 3NF schema for students, courses, and enrollments; Developed 15+ analytical queries; Identified enrollment trends; Generated insights for curriculum planning.
+**Key Achievements:** 1,900+ students analyzed | 100% enrollment rate | Average 9 courses per student (exceeds 5-6 institutional standard) | 3NF schema design for Students, Courses, Enrollments, Instructors, Departments | Top courses: Counseling (205), Immunology (204), Cybersecurity (204) | Departmental size range: 192-210 students.
 
 **Deliverables:** Database schema & EER diagram | SQL queries | Analysis results | Operational recommendations  
 🔗 [View Repository](./projects/wittig-school-analysis/) | [Database Doc](./projects/wittig-school-analysis/reports/wittig_sms_doc.pdf) | [Report PDF](./projects/wittig-school-analysis/reports/Wittig_School_Project_Report.pdf)
-
----
-
-### **Business Intelligence & Dashboarding**
-
-#### [Hotel Revenue Dashboard](./projects/hotel-dashboard-analysis/) | **Power BI • DAX • Data Modeling**
-
-Interactive dashboard for hotel revenue and booking analysis with advanced KPI tracking and dynamic visualizations.
-
-**Key Metrics:** Gross/Net Revenue | Booking trends | Cancellation impact | Occupancy rates | Lost revenue analysis
-
-**Deliverables:** 2-page Power BI dashboard | 20+ DAX measures | Interactive KPIs | Executive summary  
-🔗 [View Repository](./projects/hotel-dashboard-analysis/) | [Live Dashboard](https://app.powerbi.com/view?r=eyJrIjoiOWVhZTEwYTYtNmUzOS00MzcxLTkxMWQtODNlYWZjNGZmODYxIiwidCI6IjU5N2NlOTZmLWY2NzgtNDQ4YS1hNmE0LTAyZGJmYTUyMGQyYyJ9&embedImagePlaceholder=true) | [Report PDF](./projects/hotel-dashboard-analysis/reports/hotel_dashboard_report.pdf)
-
----
-
-#### [Chocolate Sales Dashboard](./projects/chocolate-sales-analysis/) | **Power BI • DAX • Sales Analytics**
-
-Interactive Power BI dashboard analyzing chocolate sales trends, product performance, and distribution channels.
-
-**Key Insights:** Top product categories | Channel performance comparison | Seasonal patterns | Sales optimization opportunities
-
-**Deliverables:** 2-page Power BI dashboard | DAX measures | Interactive charts | Recommendations  
-🔗 [View Repository](./projects/chocolate-sales-analysis/) | [Live Dashboard](https://app.powerbi.com/view?r=eyJrIjoiOGE4NWViYjgtZjMzYS00MzlkLWJmNGUtYjM3YmMxMGVmMzI5IiwidCI6IjU5N2NlOTZmLWY2NzgtNDQ4YS1hNmE0LTAyZGJmYTUyMGQyYyJ9) | [Report PDF](./projects/chocolate-sales-analysis/reports/chocolate-sales-report.pdf)
 
 ---
 
@@ -93,36 +93,36 @@ Interactive Power BI dashboard analyzing chocolate sales trends, product perform
 
 #### [Furniture Sales Analysis](./projects/furniture-sales-analysis/) | **Excel • Power Query • Pivot Tables**
 
-Comprehensive sales analysis with interactive Excel dashboard using Power Query transformation and pivot table analytics.
+Comprehensive sales analysis with interactive Excel dashboard using Power Query transformation and pivot table analytics for 2014-2017 data.
 
-**Key Findings:** Top products and regions | Seasonal sales patterns | Shipping mode impact | Regional profitability | Customer segmentation
+**Key Findings:** $741,999.80 total sales | $18,451.27 profit (2.5% margin) | Top products: Chairs ($328.4K), Tables ($207K), Bookcases ($114.9K) | Regional leaders: West ($252.6K, 34%), East ($208.3K, 28%) | Warehouse South consolidation candidate | 45% decline 2015, 131% growth 2016, 57% decline 2017.
 
-**Deliverables:** Interactive Excel dashboard | Power Query transformations | Pivot tables & charts | Actionable insights  
+**Deliverables:** Interactive Excel dashboard | Power Query transformations | Pivot tables & charts | Strategic recommendations  
 🔗 [View Repository](./projects/furniture-sales-analysis/) | [Excel Dashboard](https://1drv.ms/x/c/67671d55fee3b341/ERE_h7DobQdOuV233ME37EYB1QpP0gYoMQqjqmyLswiblw) | [Report PDF](./projects/furniture-sales-analysis/reports/Furniture%20Sales%20Analysis%20Report.pdf)
 
 ---
 
 #### [Sales Performance Analysis](./projects/sales-performance-analysis/) | **Excel • Pivot Tables • KPI Tracking**
 
-Multi-dimensional sales performance dashboard with regional analysis, KPI tracking, and trend visualization.
+Multi-dimensional sales performance dashboard with regional analysis, KPI tracking, and year-over-year trend visualization.
 
-**Key Metrics:** Monthly revenue trends | Regional performance | Sales vs. targets | Growth rates | Performance factors
+**Key Metrics:** 30% total sales growth 2023→2024 | 34% profit margin increase | Monitor growth +194%, Mouse growth +152% (dramatic turnarounds) | Top products: Monitor ($109K), Mouse ($106K) | South region shows highest growth | Keyboard declined from top performer to declining position.
 
 **Deliverables:** Interactive Excel dashboard | Multiple pivot tables | Executive summary | Strategic recommendations  
 🔗 [View Repository](./projects/sales-performance-analysis/) | [Excel Dashboard](https://1drv.ms/x/c/67671d55fee3b341/EaiyR5FXZrlNiWQ7eH2IKiMBH7tWman6gIlu_Nsj3rd_AA) | [Report PDF](./projects/sales-performance-analysis/reports/sales_performance_report.pdf)
 
 ---
 
-### **Python & Data Science (In Development)**
+### **Python & Data Science**
 
-#### [Python EDA Analysis](./projects/python-eda-analysis/) | **Python • pandas • matplotlib • seaborn**
+#### [Bondora Loan Analysis](./projects/bondora-loan-analysis/) | **Python • pandas • scikit-learn • Jupyter**
 
-Comprehensive Exploratory Data Analysis template demonstrating end-to-end Python data exploration workflow. Includes complete guide for your first Python analysis project.
+Comprehensive exploratory data analysis of 409,951 P2P loans with risk-based pricing insights and statistical analysis.
 
-**Features:** Distribution analysis | Correlation studies | Outlier detection | Data quality assessment | Hypothesis generation
+**Key Findings:** 409,951 loans analyzed | Risk-based pricing correlates with loan performance | Descriptive, inferential, and regression analysis | Default rate patterns identified | Recommendations for loan approval optimization.
 
-**Deliverables:** Jupyter notebook | Reproducible analysis | Best practices guide | Code examples | Resource links  
-🔗 [View Repository](./projects/python-eda-analysis/) | [Analysis Guide](./projects/python-eda-analysis/README.md)
+**Deliverables:** Jupyter notebook | Complete EDA | Statistical analysis | Interactive visualizations | Kaggle publication-ready  
+🔗 [View Repository](./projects/bondora-loan-analysis/) | [Kaggle Notebook](https://www.kaggle.com/code/rodriguedeguenon/bondora-loan-analysis) | [Requirements](./projects/bondora-loan-analysis/requirements.txt)
 
 ---
 
@@ -132,22 +132,32 @@ Comprehensive Exploratory Data Analysis template demonstrating end-to-end Python
 zachrodrigue.github.io/
 ├── projects/                    # All analysis projects
 │   ├── bellabeat-analysis/
-│   ├── cyclistic-analysis/
-│   ├── mint-classics-analysis/
-│   ├── hotel-dashboard-analysis/
-│   ├── wittig-school-analysis/
-│   ├── furniture-sales-analysis/
+│   ├── bondora-loan-analysis/
 │   ├── chocolate-sales-analysis/
+│   ├── cyclistic-analysis/
+│   ├── furniture-sales-analysis/
+│   ├── hotel-dashboard-analysis/
+│   ├── mint-classics-analysis/
 │   ├── sales-performance-analysis/
-│   └── python-eda-analysis/
-├── documents/                   # Reports and scripts
-│   ├── reports/
-│   └── scripts/
+│   └── wittig-school-analysis/
+├── Resume/                   # Project resources
+│   ├── resume
 ├── img/                         # Images and icons
+│   ├── favicon/
+│   ├── icons/
+│   └── projects/
 ├── css/                         # Stylesheets
+│   ├── animations.css
+│   ├── bootstrap.css
+│   └── style.css
 ├── js/                          # JavaScript
+│   ├── bootstrap.bundle.min.js
+│   ├── main.js
+│   └── image-modal.js
 ├── index.html                   # Portfolio homepage
 ├── projects.html                # Projects showcase
+├── privacy.html                 # Privacy policy
+├── terms.html                   # Terms of service
 └── README.md                    # This file
 ```
 
@@ -291,7 +301,7 @@ I'd love to hear from you! Let's discuss data, analytics, or potential opportuni
 
 This portfolio is **actively maintained** with new projects added regularly.
 
-- **Last Updated**: January 2026
+- **Last Updated**: January 10, 2026
 - **Total Projects**: 9 comprehensive case studies
 - **Total Hours of Analysis**: 200+
 - **Dashboards Created**: 4 interactive dashboards
