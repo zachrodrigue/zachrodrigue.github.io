@@ -1,0 +1,24 @@
+# Wittig School Database Analysis - Tools & Requirements
+
+# Database Connection & Management
+mysql-connector-python>=8.0.33
+sqlalchemy>=2.0.0
+
+# Python Data Analysis (optional, for post-SQL visualization)
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Visualization (optional, for result charts)
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Note: Primary tool is MySQL/SQL
+# Recommended tools:
+# - MySQL Server (8.0+) - Database engine
+# - MySQL Workbench (free) - GUI for database design and queries
+# - VS Code with SQL extensions - For query development
+#
+# To run SQL queries:
+# mysql -u [username] -p < wittig_school_db_script.sql
+# mysql -u [username] -p < wittig_insight_queries.sql
+

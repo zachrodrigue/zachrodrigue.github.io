@@ -1,0 +1,25 @@
+# Bellabeat Data Analysis - R Package Requirements
+
+# Core data analysis packages
+tidyverse>=2.0.0
+dplyr>=1.1.0
+tidyr>=1.3.0
+
+# Visualization
+ggplot2>=3.4.0
+ggthemes>=4.2.4
+patchwork>=1.1.2
+plotly>=4.10.0
+
+# Statistical analysis
+lubridate>=1.9.0
+scales>=1.2.0
+
+# R Markdown & reporting
+rmarkdown>=2.20
+knitr>=1.40
+
+# Optional: For interactive exploration
+shiny>=1.7.0
+shinydashboard>=0.7.2
+

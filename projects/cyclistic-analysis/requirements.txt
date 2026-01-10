@@ -1,0 +1,26 @@
+# Cyclistic Bike Share Analysis - R Package Requirements
+
+# Core data manipulation
+tidyverse>=2.0.0
+dplyr>=1.1.0
+tidyr>=1.3.0
+
+# Visualization
+ggplot2>=3.4.0
+ggthemes>=4.2.4
+plotly>=4.10.0
+
+# Date/Time handling
+lubridate>=1.9.0
+
+# Statistical analysis
+scales>=1.2.0
+skimr>=2.1.0
+
+# R Markdown & reporting
+rmarkdown>=2.20
+knitr>=1.40
+
+# Note: Tableau visualizations are created separately in Tableau Desktop/Public
+# and not reproducible via code packages
+

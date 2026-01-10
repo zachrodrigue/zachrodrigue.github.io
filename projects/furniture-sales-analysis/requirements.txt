@@ -1,0 +1,22 @@
+# Furniture Sales Analysis - Tools & Requirements
+
+# Primary Tool
+# Microsoft Excel 2016 or later
+# Download: https://www.microsoft.com/en-us/microsoft-365/excel
+
+# Features Used
+# - Power Query (for data transformation)
+# - Pivot Tables (for data summarization)
+# - Pivot Charts (for visualization)
+# - Slicers (for interactivity)
+# - Conditional Formatting (for visual insights)
+
+# Optional: If extracting/processing data before Excel
+pandas>=2.0.0
+openpyxl>=3.10.0
+python-pptx>=0.6.21  # If creating presentation from analysis
+
+# Note: This is primarily an Excel project
+# Main deliverable: furniture_sales_dashboard.xlsx file
+# No special packages needed for viewing/using the dashboard
+

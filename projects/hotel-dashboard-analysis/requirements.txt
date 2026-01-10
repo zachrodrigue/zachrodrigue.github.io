@@ -1,0 +1,18 @@
+# Hotel Revenue Dashboard - Power BI & Tools
+
+# Primary Tool
+# Power BI Desktop (Download from: https://powerbi.microsoft.com/en-us/desktop/)
+
+# For DAX measure documentation & reference
+# - DAX Studio (free tool for Power BI optimization)
+# - VS Code with DAX extensions
+
+# Optional: If converting/processing data before Power BI
+pandas>=2.0.0
+openpyxl>=3.10.0
+
+# Note: This is a Power BI project
+# Main deliverable: hotel_dashboard.pbix file
+# DAX measures can be exported and shared separately
+# No Python/R runtime required for dashboard viewing
+
